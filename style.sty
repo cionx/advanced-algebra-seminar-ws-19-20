@@ -1,0 +1,201 @@
+%%%%% PACKAGES
+
+% better microtypography
+\usepackage{microtype}
+
+% better macros
+\usepackage{xparse}
+
+% bibliography
+\usepackage[backend=biber, style=alphabetic, dateabbrev=false, urldate=long]{biblatex}
+
+% better list configuration
+\usepackage{enumitem}
+
+% automatic quotation marks
+\usepackage{csquotes}
+
+% general mathtools
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm} % configuration after cleveref was included
+
+% pictures and diagrams
+\usepackage{tikz-cd}
+\usetikzlibrary{positioning, shapes.geometric, decorations.text}
+\usepackage{arrowstyle}
+
+% setting fonts
+\usepackage[silent]{fontspec}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math} % has to be loaded after mathtools and amssymb
+
+% referencing
+\usepackage[noabbrev, capitalize]{cleveref}
+
+
+
+
+%%%%% CONFIGURATION
+
+
+
+%%% bibliography
+
+% file for the bibliography,
+\bibliography{references.bib}
+
+% always insert pp. after pagetotal, even if it isn’t recognized as a number by biblatex
+\DeclareFieldFormat[book]{pagetotal}{#1~\ppno}
+
+% no unplaned surprises with \cite
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+
+
+%%% lists
+
+% enumerate
+\setlist[enumerate]   { wide          = 0pt,
+                        leftmargin    = *,
+                        listparindent = \parindent,
+                        parsep        = 0pt }
+\setlist[enumerate, 1]{ label         = \arabic*. }
+\setlist[enumerate, 2]{ label         = \alph*. }
+
+% itemize
+\setlist[itemize]    { wide          = 0pt,
+                       leftmargin    = *,
+                       listparindent = \parindent,
+                       parsep        = 0pt }
+\setlist[itemize, 1]{ label          = {\textbullet} }
+\setlist[itemize, 2]{ label          = {\textopenbullet} }
+
+
+%%% fonts
+
+\setmainfont[Numbers = OldStyle, RawFeature=+calt]{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmonofont[Scale=MatchLowercase]{Hack}
+\setmathfont{Libertinus Math}
+
+\newfontfamily{\headingfont}{Libertinus Serif}[Numbers = OldStyle, RawFeature = {+ss02, +ss05, +ss06, +calt, +dlig}]
+%\addtokomafont{disposition}{\headingfont}
+
+
+
+%%% spacing
+
+% prevents breaking inline math around binary or relationship symbols
+\binoppenalty = \maxdimen
+\relpenalty   = \maxdimen
+
+% for fixing spacing by hand
+\newcommand{\spacing}{\,}
+\newcommand{\nspacing}{\!}
+
+
+
+%%% text formatting
+
+\newcommand{\defemph}{\emph}
+
+% words
+\newcommand{\algebra}[1]{#1\nobreakdash-\hspace{0pt}algebra}
+\newcommand{\dimensional}[1]{#1\nobreakdash-\hspace{0pt}dimensional}
+\newcommand{\howmanyth}[1]{#1\nobreakdash-th}
+\newcommand{\modules}[1]{#1\nobreakdash-\hspace{0pt}modules}
+\newcommand{\representations}[1]{#1\nobreakdash-\hspace{0pt}representations}
+\newcommand{\vectorspace}[1]{#1\nobreakdash-\hspace{0pt}vector space}
+\newcommand{\vectorspaces}[1]{#1\nobreakdash-\hspace{0pt}vector spaces}
+
+
+
+%%% math stuff
+
+% theorem environments
+\newcounter{everything}
+\theoremstyle{definition}
+\newtheorem{corollary}[everything]{Corollary}
+\newtheorem{definition}[everything]{Definition}
+\newtheorem{example}[everything]{Example}
+\newtheorem{lemma}[everything]{Lemma}
+\newtheorem{proposition}[everything]{Proposition}
+\newtheorem{remark}[everything]{Remark}
+\newtheorem{recall}[everything]{Recall}
+\newtheorem{warning}[everything]{Warning}
+
+% fields and numbers
+\newcommand{\Natural}{\mathbb{N}}
+\newcommand{\Integer}{\mathbb{Z}}
+\newcommand{\Rational}{\mathbb{Q}}
+\newcommand{\Complex}{\mathbb{C}}
+\newcommand{\Finite}{\mathbb{F}}
+\newcommand{\kf}{\mathbb{k}}
+
+% categories
+\newcommand{\catname}{\mathbf}
+\newcommand{\Modfd}[1]{#1\textrm{-}\mathrm{Mod}^{\fd}}
+\newcommand{\Rep}{\catname{Rep}}
+\newcommand{\Repnil}{\Rep^{\nil}}
+
+% spaces and such
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\GrGr}{K}
+\newcommand{\Hall}{\mathbf{H}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Iso}{Iso}
+\newcommand{\Nil}{\mathrm{N}}
+\newcommand{\Par}{\mathrm{Par}}
+\newcommand{\powerseries}[2]{#1\lBrack #2 \rBrack}
+\newcommand{\Proj}{\mathbb{P}}
+\newcommand{\symm}{\mathrm{S}}
+
+% functions
+\newcommand{\counting}{\#}
+\newcommand{\length}{\ell}
+
+% binary relations and operations
+\newcommand{\defined}{\coloneqq}
+\newcommand{\tensor}{\otimes}
+
+% delimiters
+\DeclarePairedDelimiter{\class}{[}{]}
+\DeclarePairedDelimiterX{\euler}[2]{\langle}{\rangle}{#1, #2}
+\DeclarePairedDelimiter{\gen}{\langle}{\rangle}
+\DeclarePairedDelimiter{\genideal}{(}{)}
+\DeclareRobustCommand{\qbinomial}{\genfrac{[}{]}{0pt}{}}
+\DeclarePairedDelimiter{\qnum}{[}{]}
+\DeclarePairedDelimiter{\size}{\lvert}{\rvert}
+
+% decoration
+\newcommand{\fd}{\mathrm{fd}}
+\newcommand{\nil}{\mathrm{nil}}
+
+% suchthat
+\NewDocumentCommand%
+{\suchthat}%
+{so}
+{%
+  \IfValueTF{#2}
+  {%
+    \:#2|\:
+  }
+  {%
+    \IfBooleanTF{#1}
+    {%
+      \:\middle|\:
+    }
+    {%
+      \mathrel{|}      
+    }
+  }
+}
+
+
+
+
+
