@@ -15,6 +15,9 @@
 % automatic quotation marks
 \usepackage{csquotes}
 
+% tables
+\usepackage{booktabs}
+
 % general mathtools
 \usepackage{mathtools}
 \usepackage{amssymb}
@@ -74,7 +77,7 @@
 %%% fonts
 
 \setmainfont[Numbers = OldStyle, RawFeature=+calt]{Libertinus Serif}
-\setsansfont{Libertinus Sans}
+\setsansfont[Numbers = OldStyle]{Libertinus Sans}
 \setmonofont[Scale=MatchLowercase]{Hack}
 \setmathfont{Libertinus Math}
 
@@ -103,6 +106,7 @@
 \newcommand{\algebra}[1]{#1\nobreakdash-\hspace{0pt}algebra}
 \newcommand{\dimensional}[1]{#1\nobreakdash-\hspace{0pt}dimensional}
 \newcommand{\howmanyth}[1]{#1\nobreakdash-th}
+\newcommand{\invariant}[1]{#1\nobreakdash-\hspace{0pt}invariant}
 \newcommand{\modules}[1]{#1\nobreakdash-\hspace{0pt}modules}
 \newcommand{\representations}[1]{#1\nobreakdash-\hspace{0pt}representations}
 \newcommand{\vectorspace}[1]{#1\nobreakdash-\hspace{0pt}vector space}
@@ -113,7 +117,7 @@
 %%% math stuff
 
 % theorem environments
-\newcounter{everything}
+\newcounter{everything}[section]
 \theoremstyle{definition}
 \newtheorem{corollary}[everything]{Corollary}
 \newtheorem{definition}[everything]{Definition}
@@ -123,6 +127,8 @@
 \newtheorem{remark}[everything]{Remark}
 \newtheorem{recall}[everything]{Recall}
 \newtheorem{warning}[everything]{Warning}
+
+\renewcommand{\theeverything}{\thesection.\arabic{everything}}
 
 % fields and numbers
 \newcommand{\Natural}{\mathbb{N}}
@@ -134,9 +140,20 @@
 
 % categories
 \newcommand{\catname}{\mathbf}
-\newcommand{\Modfd}[1]{#1\textrm{-}\mathrm{Mod}^{\fd}}
+\newcommand{\gencatname}{\mathcal}
+% generaic categories
+\newcommand{\Acat}{\gencatname{A}}
+\newcommand{\Bcat}{\gencatname{B}} 
+% specific categories
+\newcommand{\Mod}[1]{#1\textrm{-}\catname{Mod}}
+\newcommand{\Modfd}[1]{#1\textrm{-}\catname{Mod}^{\fd}}
 \newcommand{\Rep}{\catname{Rep}}
-\newcommand{\Repnil}{\Rep^{\nil}}
+\newcommand{\rep}{\catname{rep}}
+\newcommand{\repnil}{\catname{rep}^\nil}
+
+% arrows
+\newcommand{\xto}{\xrightarrow}
+\newcommand{\xlongto}[1]{\xrightarrow{\; #1 \;}}
 
 % spaces and such
 \DeclareMathOperator{\Aut}{Aut}
@@ -147,6 +164,7 @@
 \DeclareMathOperator{\GrGr}{K}
 \newcommand{\Hall}{\mathbf{H}}
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Iso}{Iso}
 \newcommand{\Nil}{\mathrm{N}}
 \newcommand{\Par}{\mathrm{Par}}
@@ -167,6 +185,7 @@
 \DeclarePairedDelimiterX{\euler}[2]{\langle}{\rangle}{#1, #2}
 \DeclarePairedDelimiter{\gen}{\langle}{\rangle}
 \DeclarePairedDelimiter{\genideal}{(}{)}
+\DeclarePairedDelimiter{\orbit}{[}{]}
 \DeclareRobustCommand{\qbinomial}{\genfrac{[}{]}{0pt}{}}
 \DeclarePairedDelimiter{\qnum}{[}{]}
 \DeclarePairedDelimiter{\size}{\lvert}{\rvert}
