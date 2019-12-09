@@ -42,25 +42,7 @@ See \cref{jordan quiver} for a visualization.
 In the following we write~$\kf$ to mean a field or~$\Finite_1$.
 
 A representation of the Jordan~quiver over~$\kf$ is the same as a pair~$(V,f)$ consisting of a~\vectorspace{$\kf$}~$V$ together with an endomorphism~$f$ of~$V$.
-A homomorphism of representations~$\varphi \colon (V,f) \to (W,g)$ is then precisely a homomorphism of vector spaces~$\varphi \colon V \to W$ that makes the following square diagram commute:
-\[
-  \begin{tikzcd}[column sep = large]
-    V
-    \arrow{r}[above]{\varphi}
-    \arrow{d}[left]{f}
-    &
-    W
-    \arrow{d}[right]{g}
-    \\
-    V
-    \arrow{r}[below]{\varphi}
-    &
-    W
-  \end{tikzcd}
-\]
-If~$(V, f) \cong (W, g)$ then in particular~$V \cong W$ as vector spaces.
-So to understand the isomorphism classes of~\representations{$Q$} over~$\kf$ we may assume that~$V = W$.
-The commutativity of the above square diagram, together with the requirement that~$\varphi$ is an isomorphism, means precisely that the endomorphisms~$f$,~$g$ of~$V$ are similar.
+Two such representations~$(V, f)$ and~$(W, g)$ are isomorphic if and only if~$V$,~$W$ are isomorphic as~\vectorspaces{$\kf$} and the endomorphisms~$f$,~$g$ are similar.
 We hence find that that the isomorphism classes of~\representations{$Q$} over~$\kf$ correspond one-to-one to conjugacy classes of endomorphisms of~\vectorspaces{$\kf$}.
 
 Suppose that~$V$ is finite-dimensional.
@@ -68,48 +50,57 @@ If~$\kf$ is a field then these conjugacy classes are can be understood via the r
 In the case that~$\kf$ is also algebraically closed, or that it is~$\Finite_1$, or that we are interested only in nilpotent endomorphisms, one can use the usual Jordan normal form.
 (See \cref{jordan normal form} for the Jordan normal form over~$\Finite_1$.)
 
-A representation~$(V, f)$ of the Jordan quiver is nilpotent (see \cref{recalling nilpotent representations}) if and only if the endomorphism~$f$ is nilpotent.
+A representation~$(V, f)$ of the Jordan quiver is nilpotent (in the sense of \cref{recalling nilpotent representations}) if and only if the endomorphism~$f$ is nilpotent.
 We will in the rest of this talk restrict our attention to finite-dimensional, nilpotent representations of the Jordan quiver.
 As introduced in the previous talks we denote by
 \[
   \repnil(Q, \kf)
 \]
 the full subcategory of~$\Rep(Q, \kf)$ whose objects are the finite-dimensional, nilpotent representations of~$Q$ over~$\kf$.
-We denote the set of isomorphism classes of~$\repnil(Q, \kf)$ by~$\Iso(Q, \kf)$.
+We denote the set of isomorphism classes of~$\repnil(Q, \kf)$ by
+\[
+  \Iso(Q, \kf)
+  \defined
+  \repnil(Q, \kf) / {\sim} \,.
+\]
 (We will see in \cref{representatives via partitions} that this is indeed a set.)
 
 Every nilpotent endomorphism on a finite-dimensional~\vectorspace{$\kf$} admits a Jordan normal form.
 We can therefore classify the isomorphism classes of~$\repnil(Q, \kf)$:
-For every dimension~$d \geq 0$ let
-\[
-  \Nil_d
-  \defined
-  \left(
-    \kf^d,
-    \begin{bmatrix}
-      0 & 1       &         &   \\
-        & \ddots  & \ddots  &   \\
-        &         & \ddots  & 1 \\
-        &         &         & 0
-    \end{bmatrix}
-  \right)
-\]
-if~$\kf$ is a field, and let
-\[
-  \Nil_d
-  \defined
-  (
-    \{ 0, 1, \dotsc, d \},
-    [d \mapsto (d-1) \mapsto (d-2) \mapsto \dotsb \mapsto 1 \mapsto 0 \mapsto 0]
-  )
-\]
-if~$\kf = \Finite_1$.
-For every tupel~$(d_1, \dotsc d_n)$ of dimensions~$d_i \geq 0$ let
-\[
-  \Nil_{(d_1, \dotsc, d_n)}
-  \defined
-  \Nil_{d_1} \oplus \dotsb \oplus \Nil_{d_n} \,.
-\]
+
+\begin{definition}
+  For every dimension~$d \geq 0$ let
+  \[
+    \Nil_d
+    \defined
+    \left(
+      \kf^d,
+      \begin{bmatrix}
+        0 & 1       &         &   \\
+          & \ddots  & \ddots  &   \\
+          &         & \ddots  & 1 \\
+          &         &         & 0
+      \end{bmatrix}
+    \right)
+  \]
+  if~$\kf$ is a field, and let
+  \[
+    \Nil_d
+    \defined
+    (
+      \{ 0, 1, \dotsc, d \},
+      [d \mapsto (d-1) \mapsto (d-2) \mapsto \dotsb \mapsto 1 \mapsto 0 \mapsto 0]
+    )
+  \]
+  if~$\kf = \Finite_1$.
+  For every tupel~$(d_1, \dotsc d_n)$ of dimensions~$d_i \geq 0$ let
+  \[
+    \Nil_{(d_1, \dotsc, d_n)}
+    \defined
+    \Nil_{d_1} \oplus \dotsb \oplus \Nil_{d_n} \,.
+  \]
+\end{definition}
+
 See \cref{nilpotent representation example} for a visualization of~$\Nil_{(d_1, \dotsc, d_n)}$.
 \begin{figure}[tb]
   \centering
@@ -196,31 +187,21 @@ See \cref{nilpotent representation example} for a visualization of~$\Nil_{(d_1, 
   \label{nilpotent representation example}
 \end{figure}
 
-\begin{proposition}[Jordan normal form for nilpotent endomorphisms]
-  \label{jordan normal form applied to reps}
-  \leavevmode
-  \begin{enumerate}
-    \item
-      Every finite-dimensional, nilpotent representation of~$Q$ over~$\kf$ is isomorphic to a representation of the form~$\Nil_{(d_1, \dotsc, d_n)}$ for some~$n \geq 0$ and~$d_1, \dotsc, d_n \geq 1$.
-    \item
-      Two such representations~$\Nil_{(d_1, \dotsc, d_n)}$ and~$\Nil_{(d'_1, \dotsc, d'_m)}$ are isomorphic if and only if~$n = m$ and the tuples~$(d_1, \dotsc, d_n)$ and~$(d'_1, \dotsc, d'_m)$ are the same up to permutation.
-  \end{enumerate}
-\end{proposition}
-
-We can reformulate the above \lcnamecref{jordan normal form applied to reps} in terms of partitions:
-
 \begin{definition}
   For every~$n \geq 0$ let~$\Par(n)$ be the set of partition of the number~$n$, i.e.\
   \[
     \Par(n)
     \defined
-    \{
+    \left\{
       (\lambda_1, \dotsc, \lambda_l)
-    \suchthat
-      \lambda_1 \geq \dotsb \geq \lambda_l \geq 1,
-      \,
-      \lambda_1 + \dotsb + \lambda_l = n
-    \} \,.%
+    \suchthat*
+      \begin{array}{@{}l@{}}
+        \lambda_1 \geq \dotsb \geq \lambda_l \geq 1,
+        \\
+        \lambda_1 + \dotsb + \lambda_l = n
+      \end{array}
+      \spacing
+    \right\} \,.%
     \footnote{
       We want to point out that in this talk we do not allow a partition to contain zero as an entry.
       This is done purely for technical reasons.
@@ -234,11 +215,14 @@ We can reformulate the above \lcnamecref{jordan normal form applied to reps} in 
   \]
 \end{definition}
 
-
-\begin{corollary}
+\begin{proposition}
   \label{representatives via partitions}
   The representations~$\Nil_\lambda$ with~$\lambda \in \Par$ form a set of representatives for~$\Iso(Q, \kf)$.
-\end{corollary}
+\end{proposition}
+
+\begin{proof}
+  The assertions follow from the existence and uniqueness of the Jordan normal form of nilpotent endomorphisms.
+\end{proof}
 
 We find in particular that the category~$\repnil(Q, \kf)$ is essentially small, i.e.\ that its set of isomorphism classes~$\Iso(Q, \kf)$ is indeed a set (and even a countable one).
 
@@ -255,11 +239,11 @@ For this we need to understand its Euler form.
   \label{repnil is hereditary}
   The category~$\repnil(Q, \Finite_q)$ is hereditary, i.e.
   \[
-    \Ext^n_{\repnil(Q, \Finite_q)}
+    \Ext^n_{\repnil(Q, \Finite_q)}(A,B)
     =
     0
   \]
-  for every~$n \geq 2$.
+  for any two objects~$A$,~$B$ of~$\repnil(Q, \Finite_q)$ and every~$n \geq 2$.
 \end{proposition}
 
 \begin{proof}
@@ -286,15 +270,19 @@ For this we need to understand its Euler form.
 \end{lemma}
 
 \begin{proof}
-%    \item
-%      The indecomposable objects of~$\repnil(Q, \Finite_q)$ are precisely~$\Nil_i$ with~$i \geq 1$.
-%      The representation~$\Nil_i$ has (up to isomorphism) the subrepresentations~$\Nil_j$ with~$j = 0, \dotsc, i$.
-%      Thus only~$\Nil_1$ is simple.
-%    \item
-%      This follows from the previous assertion since~ each objects of~$\repnil(Q, \Finite_q)$ admits a composition series, whose composition factors are necessarily~$S$.
-  We have seen the first two assertions in last week’s talk.
-  For the first assertion we note that~$\Hom(S, S) = \Finite_q$ because~$S$ is one-dimensional.      
-  For the computation of~$\Ext^1(S,S)$ see \cref{computing ext}.
+  \leavevmode
+  \begin{enumerate}
+    \item
+      The indecomposable objects of~$\repnil(Q, \Finite_q)$ are precisely~$\Nil_i$ with~$i \geq 1$.
+      The representation~$\Nil_i$ has (up to isomorphism) the subrepresentations~$\Nil_j$ with~$j = 0, \dotsc, i$.
+      Thus only~$\Nil_1$ is simple.
+    \item
+      This follows from the previous assertion since~ each objects of~$\repnil(Q, \Finite_q)$ admits a composition series, whose composition factors are necessarily~$S$.
+    \item      
+      For the first assertion we note that~$\Hom(S, S) = \Finite_q$ because~$S$ is one-dimensional.      
+      For the computation of~$\Ext^1(S,S)$ see \cref{computing ext}.
+    \qedhere
+  \end{enumerate}
 \end{proof}
 
 \begin{corollary}
@@ -306,7 +294,7 @@ For this we need to understand its Euler form.
   See \cref{proof of euler form is trivial}.
 \end{proof}
 
-We find from the above that~$\repnil(Q, \Finite)$ is a abelian, finitary, hereditary category with vanishing Euler form.
+We find from the above that~$\repnil(Q, \Finite_q)$ is a abelian, finitary, hereditary category with vanishing Euler form.
 We are thus well-prepared to consider the Hall algebra~$\Hall(Q, \Finite_q)$.
 \begin{enumerate}
   \item
@@ -324,13 +312,15 @@ We are thus well-prepared to consider the Hall algebra~$\Hall(Q, \Finite_q)$.
       =
       \counting
       \{
-        \text{subrepresentations~$L$ of~$R$ with~$L \cong N$ and~$R/L \cong M$}
-        \spacing
+        \text{subrepresentations~$L$ of~$R$}
+      \suchthat
+        L \cong N,
+        R/L \cong M
       \} \,.
     \end{gather*}
     The multiplicative neutral element of~$\Hall(Q, \Finite_q)$ is given by~$1_{\Hall(Q, \Finite_q)} = \class{0}$.
   \item
-    The category~$\repnil(Q, \Finite_q)$ satisfies the finite suboject condition and its Euler form vanishes.%
+    The category~$\repnil(Q, \Finite_q)$ satisfies the finite subobject condition and its Euler form vanishes.%
     \footnote{%
       We say that a category~$\Acat$ satisfies the \defemph{finite suboject condition} if every object of~$\Acat$ admits only finitely many subobjects.
     }
@@ -340,7 +330,7 @@ We are thus well-prepared to consider the Hall algebra~$\Hall(Q, \Finite_q)$.
       \Delta(\class{M})
       =
       \sum_{\class{M}, \class{N} \in \Iso(Q, \Finite_q)}
-      \frac{1}{a_R} P^R_{M,N} \class{M} \tensor \class{N}
+      \frac{ P^R_{M,N} }{a_R} \class{M} \tensor \class{N}
     \]
     where~$a_R$ is the size of the automorphism group~$\Aut(R)$, and~$P^R_{M,N}$ is the number of short exact sequences~$0 \to N \to R \to M \to 0$.
     % TODO: Right formula for comultiplication?
@@ -372,16 +362,17 @@ We are thus well-prepared to consider the Hall algebra~$\Hall(Q, \Finite_q)$.
 \end{enumerate}
 
 We will in the rest of this talk be mostly concerned with the upcoming Hall~algebra~~$\Hall(Q, \Finite_1)$, and continue the study of~$\Hall(Q, \Finite_q)$ in next week’s talk.
-But we will here compute at least some of the structure constants of~$\Hall(Q, \Finite_q)$.
+However, we will compute some of the structure constants of~$\Hall(Q, \Finite_q)$.
 For this we follow \cite[Example~2.2]{schiffmann_hall}.
 
 
 \begin{example}
-  For any three partition~$\lambda, \mu, \kappa \in \Par$ we abbreviate the structure constant
+  For any three partition~$\lambda, \mu, \kappa \in \Par$ we abbreviate
   \[
-    C^{\Nil_{\kappa}}_{\Nil_{\lambda}, \Nil_{\mu}}
+    C^{\kappa}_{\lambda, \mu}
+    \defined
+    C^{\Nil_{\kappa}}_{\Nil_{\lambda}, \Nil_{\mu}} \,.
   \]
-  as~$C^{\kappa}_{\lambda,\mu}$.
   \begin{enumerate}
     \item
       Let~$\lambda = (1^n)$ and~$\mu = (1^m)$.
@@ -401,7 +392,7 @@ For this we follow \cite[Example~2.2]{schiffmann_hall}.
         \counting {\Gr(m, n+m, \Finite_q)}
         \\
         &=
-        \qbinomial{n+m}{m}_q \,.
+        \qbinom{n+m}{m}_q \,.
       \end{align*}
       (See \cref{size of quantum grassmannian} for the last equality.)
 
@@ -424,7 +415,7 @@ For this we follow \cite[Example~2.2]{schiffmann_hall}.
       \begin{align*}
         C^{(1^{n+2})}_{(1^n),(1,1)}
         &=
-        \qbinomial{n+2}{2}_q
+        \qbinom{n+2}{2}_q
         =
         \frac{[n+2]_q [n+1]_q}{[2]_q}
         \\
@@ -483,81 +474,19 @@ For this we follow \cite[Example~2.2]{schiffmann_hall}.
         1 \,.
       \]
     \item
-      Let us compute the coefficients~$C^{(2,1)}_{(1),(2)}$ and~$C^{(2,1)}_{(2),(1)}$.
-      We use for~$\Nil_{(2,1)}$ the basis~$e_1, e_2, e_3$ with~$\alpha e_1 = e_2$ and~$\alpha e_2 = \alpha e_3 = 0$ where~$\alpha$ denotes the loop of~$Q$.
-      See \cref{basis for 2 1}.
-      \begin{figure}[tb]
-        \centering
-          \begin{tikzpicture}
-            % origin
-            \node at (0,0) (Z) {$0$};
-            % first line
-            \node at (-0.5,2) (A1) {$e_1$};
-            \node at (-0.5,1) (A2) {$e_2$};
-            \draw[thick] (A1) -- (A2) -- (Z);
-            % second line
-            \node at (0.5,1) (B1) {$e_3$};
-            \draw[thick] (B1) -- (Z);
-          \end{tikzpicture}
-          \caption{The representations~$\Nil_{(2,1)}$ over~$\Finite_q$.}
-        \label{basis for 2 1}
-      \end{figure}
-
-      The coefficient~$C^{(2,1)}_{(1),(2)}$ is the number of subrepresentations~$L$ of~$\Nil_{(2,1)}$ with~$L \cong \Nil_2$ and~$\Nil_{(2,1)}/L \cong \Nil_1$.
-      The condition~$L \cong \Nil_2$ means that~$L$ is cyclically generated by a vector~$v = a e_1 + b e_2 + c e_3$ with~$a \neq 0$.
-      We may assume that~$a = 1$.
-      Then
+      One finds for all~$n \geq 2$ and~$m \geq 1$ that
       \[
-        \gen{v}_{\Finite_q Q}
+        C^{(n, 1^m)}_{(n), (1^m)}
         =
-        \gen{ v , \alpha v }_{\Finite_q}
+        q^m
         =
-        \gen{ e_1 + b e_2 + c e_3, e_2 }_{\Finite_q}
-        =
-        \gen{ e_1 + c e_3, e_2 } \,.
+        C^{(n, 1^m)}_{(1^m), (n)} \,,
       \]
-      For any such subrepresentation~$L$ the quotient~$\Nil_{(2,1)}/L$ is one-dimensional and thus isomorphic to~$\Nil_1$.
-      We get for every coefficient~$c \in \Finite_q$ a different subrepresentation of~$\Nil_{(2,1)}$.
-      Hence
-      \[
-        C^{(2,1)}_{(1),(2)}
-        =
-        \counting \Finite_q
-        =
-        q \,.
-      \]
-
-      The coefficient~$C^{(2,1)}_{(1),(2)}$ is the number of subrepresentations~$L$ of~$\Nil_{(2,1)}$ with~$L \cong \Nil_1$ and~$\Nil_{(2,1)}/L \cong \Nil_2$.
-      The condition~$L \cong \Nil_1$ means that~$L$ is cyclically generated by a nonzero vector~$v = b e_2 + c e_3$ with~$a \neq 0$.
-
-      If~$b \neq 0$ then we may assume that~$b = 1$, so that~$v = e_2 + c e_3$.
-      Then~$\Nil_{(2,1)}/L$ has the basis vectors~$\class{e_1}$,~$\class{e_3}$ with~$\alpha \class{e_1} = - c \class{e_3}$ and~$\alpha \class{e_3} = 0$.
-      Thus~$\Nil_{(2,1)}/L \cong \Nil_2$ if~$c \neq 0$ and~$\Nil_{(2,1)}/L \cong \Nil_{(1,1)}$ if~$c = 0$.
-      In the case~$b \neq 0$ we thus have~$q - 1$ choices for~$L$.
-%
-      If~$b = 0$ then~$c \neq 0$ and we may assume that~$c = 1$.
-      Then~$v = e_3$ and thus~$\Nil_{(2,1)}/L \cong \Nil_2$.
-
-      We find altogether that there are~$q$ choices for~$L$, i.e
-      \[
-        C^{(2,1)}_{(2),(1)}
-        =
-        q \,.
-      \]
-    \item
-      One finds in the same way as above that more generally
-      \[
-        C^{(n, 1)}_{(n), (1)}
-        =
-        q
-        =
-        C^{(n, 1)}_{(1), (n)}
-      \]
-      for every~$n \geq 2$.
+      see \cref{computing more structure constants}.
   \end{enumerate}
-  We observe that in the above examples the coefficient~$C^{\kappa}{\lambda, \mu}$ are always polynomials in~$q$ with integer coefficients.
+  We observe that in the above examples the coefficient~$C^{\kappa}_{\lambda, \mu}$ are always polynomials in~$q$ with integer coefficients.
   We will see in next week’s talk that this is true for any coefficient~$C^{\kappa}_{\lambda, \mu}$.
-  This will allow us to define the \defemph{generaic Hall algebra} of the Jordan quiver.
+  This will allow us to define the \defemph{generic Hall algebra} of the Jordan quiver.
 
   We also have~$C^{\kappa}_{\lambda, \mu} = C^{\kappa}_{\mu, \lambda}$ in each example.
   We will see in next week’s talk that the Hall algebra~$\Hall(Q, \Finite_q)$ is indeed commutative, which means precisely that~$C^\kappa_{\lambda, \mu} = C^\kappa_{\mu, \lambda}$ for any three partitions~$\lambda, \mu, \kappa \in \Par$.
@@ -752,20 +681,20 @@ We will in the following show that it is actually the ring of symmetric function
 
 \subsection{Definition}
 
-For every~$k \geq 0$ we denote by
+For every~$n \geq 0$ we denote by
 \[
-  \Lambda^{(k)}
+  \Lambda^{(n)}
   \defined
-  \Complex[x_1, \dotsc, x_k]^{\symm_k}
+  \Complex[x_1, \dotsc, x_n]^{\symm_n}
 \]
-the algebra of symmetric polynomials in~$k$ variables.
-We have for every number of variables~$k \geq 0$ a homomorphism of graded algebras
+the algebra of symmetric polynomials in~$n$ variables.
+We have for every number of variables~$n \geq 0$ a homomorphism of graded algebras
 \[
-  \Lambda^{(k+1)} \to \Lambda^{(k)} \,,
+  \Lambda^{(n+1)} \to \Lambda^{(n)} \,,
   \quad
-  f^{(k+1)}
+  f^{(n+1)}
   \mapsto
-  f^{(k+1)}(x_1, \dotsc, x_k, 0) \,.
+  f^{(n+1)}(x_1, \dotsc, x_n, 0) \,.
 \]
 
 \begin{definition}
@@ -773,8 +702,8 @@ We have for every number of variables~$k \geq 0$ a homomorphism of graded algebr
   \[
     \Lambda
     \defined
-    \lim_{k \geq 0}
-    \Bigl( \Lambda^{(k+1)} \to \Lambda^{(k)} \Bigr)
+    \lim_{n \geq 0}
+    \Bigl( \Lambda^{(n+1)} \to \Lambda^{(n)} \Bigr)
   \]
   in the category of graded algebras.
   The elements of~$\Lambda$ are \defemph{symmetric functions}.
@@ -785,20 +714,20 @@ We have for every number of variables~$k \geq 0$ a homomorphism of graded algebr
 \end{warning}
 
 Let us make the above definition more explicit:
-For every~$n \geq 0$ we have
+For every degree~$k \geq 0$ we have
 \begin{align*}
-  \Lambda_n
+  \Lambda_k
   &=
-  \lim_{k \geq 0}
-  \Bigl( \Lambda^{(k+1)}_n \to \Lambda^{(k)}_n \Bigr)
+  \lim_{n \geq 0}
+  \Bigl( \Lambda^{(n+1)}_k \to \Lambda^{(n)}_k \Bigr)
   \\
   &=
   \left\{
-    \bigl( f^{(k)} \bigr)_{k \geq 0}
+    \bigl( f^{(n)} \bigr)_{n \geq 0}
     \suchthat*
     \begin{tabular}{@{}l@{}}
-      $f^{(k)} \in \Lambda^{(k)}_n$ for every~$k \geq 0$ such that \\
-      $f^{(k+1)}(x_1, \dotsc, x_k, 0) = f^{(k)}$ for every~$k \geq 0$
+      $f^{(n)} \in \Lambda^{(n)}_k$ for every~$n \geq 0$ such that \\
+      $f^{(n+1)}(x_1, \dotsc, x_n, 0) = f^{(n)}$ for every~$n \geq 0$
     \end{tabular}
   \right\} \,,
 \end{align*}
@@ -806,76 +735,82 @@ and we have overall
 \[
   \Lambda
   =
-  \bigoplus_{n \geq 0} \Lambda_n
+  \bigoplus_{k \geq 0} \Lambda_k
 \]
 as vector spaces.
 The multiplication on~$\Lambda$ is given by
 \[
-  (f^{(k)})_{k \geq 0}
+  (f^{(n)})_{n \geq 0}
   \cdot
-  (g^{(k)})_{k \geq 0}
+  (g^{(n)})_{n \geq 0}
   =
-  (f^{(k)} \cdot g^{(k)})_{k \geq 0}
+  (f^{(n)} \cdot g^{(n)})_{n \geq 0}
 \]
-for all~$(f^{(k)})_{k \geq 0} \in \Lambda_n$ and~$(g^{(k)})_{k \geq 0} \in \Lambda_m$.
+for all homogeneous symmetric functions~$(f^{(n)})_{n \geq 0} \in \Lambda_k$ and~$(g^{(n)})_{n \geq 0} \in \Lambda_l$.
 
-A homogeneous symmetric function~$f$, say of degree~$n$, is thus the same as a \enquote{consistent choice} of homogeneous symmetric polynomials~$f^{(k)} \in \Lambda^{(k)}$ of degree~$n$ for every~$k \geq 0$.
-We have for every number of variables~$k \geq 0$ a homomorphism of graded algebras
+A homogeneous symmetric function~$f$, say of degree~$k$, is thus the same as a \enquote{consistent choice} of homogeneous symmetric polynomials~$f^{(n)}$ of degree~$k$ for every number of variables~$n \geq 0$.
+We have for every number of variables~$n \geq 0$ a homomorphism of graded algebras
 \[
-  \Lambda \to \Lambda^{(k)} \,,
+  \Lambda
+  \to
+  \Lambda^{(n)} \,,
   \quad
-  f \mapsto f(x_1, \dotsc, x_k)
+  f
+  \mapsto
+  f(x_1, \dotsc, x_n)
 \]
-that is given in each degree by projection onto the~\howmanyth{$k$} component.
+that is given in each degree by projection onto the~\howmanyth{$n$} component.
 For any two symmetric functions~$f$,~$g$ we have by construction of~$\Lambda$ that
 \[
   f = g
   \iff
-  \text{$f(x_1, \dotsc, x_k) = g(x_1, \dotsc, x_k)$ for every~$k \geq 0$.}
+  \text{$f(x_1, \dotsc, x_n) = g(x_1, \dotsc, x_n)$ for every~$n \geq 0$.}
 \]
 
 \begin{example}
-  We have for every number of variables~$k \geq 0$ and every degree~$n \geq 0$ the \defemph{elementary symmetric polynomial}
+  We have for every number of variables~$n \geq 0$ and every degree~$k \geq 0$ the \defemph{elementary symmetric polynomial}
   \[
-    e^{(k)}_n(x_1, \dotsc, x_k)
+    e^{(n)}_k(x_1, \dotsc, x_n)
     \defined
-    \sum_{1 \leq i_1 < \dotsb < i_n \leq k}
-    x_{i_1} \dotsm x_{i_n}
+    \sum_{1 \leq i_1 < \dotsb < i_k \leq n}
+    x_{i_1} \dotsm x_{i_k}
     \in
-    \Lambda^{(k)}_n
+    \Lambda^{(n)}_k \,,
   \]
-  with~$e^{(k)}_n = 0$ whenever~$n > k$.
-  These polynomials satisfy the conditions
+  with~$e^{(n)}_k = 0$ whenever~$k > n$.
+  These polynomials satisfy the condition
   \[
-    e^{(k+1)}_n(x_1, \dotsc, x_k, 0)
+    e^{(n+1)}_k(x_1, \dotsc, x_n, 0)
     =
-    e^{(k)}_n(x_1, \dotsc, x_k)
+    e^{(n)}_k
   \]
-  for all~$k \geq 0$.
-  These elementary symmetric polynomials~$e^{(k)}_n$ with~$k \geq 0$ therefore assemble into a single homogeneous symmetric function
+  for all~$n \geq 0$.
+  These elementary symmetric polynomials~$e^{(n)}_k$ with~$n \geq 0$ therefore assemble into a single homogeneous symmetric function
   \[
-    e_n \in \Lambda_n \,.
+    e_k \in \Lambda_k \,.
   \]
-  This is the~\defemph{\howmanyth{$n$} elementary symmetric function}. 
+  This is the~\defemph{\howmanyth{$k$} elementary symmetric function}. 
 
   We find similarly that the \defemph{power symmetric polynomials}
   \[
-    p^{(k)}_n(x_1, \dotsc, x_k)
+    p^{(n)}_k(x_1, \dotsc, x_n)
     \defined
-    x_1^n + \dotsb + x_k^n \,,
+    x_1^k + \dotsb + x_n^k \,,
   \]
   and the \defemph{completely homogenous symmetric polynomials}
   \[
-    h^{(k)}_n(x_1, \dotsc, x_k)
+    h^{(n)}_k(x_1, \dotsc, x_n)
     \defined
-    \sum_{1 \leq i_1 \leq \dotsb \leq i_n \leq k}
-    x_{i_1} \dotsm x_{i_n}
+    \sum_{1 \leq i_1 \leq \dotsb \leq i_k \leq n}
+    x_{i_1} \dotsm x_{i_k}
     =
-    \sum \text{monomials of homogeneous degree~$n$}
+    \sum \text{monomials of homogeneous degree~$k$}
   \]
   result in homogeneous symmetric functions
   \[
-    p_n, h_n \in \Lambda \,.
+    p_k, h_k
+    \in
+    \Lambda_k \,.
   \]
   These are the \defemph{power symmetric functions} and \defemph{completely homogeneous symmetric functions}.
 \end{example}
@@ -885,9 +820,9 @@ For any two symmetric functions~$f$,~$g$ we have by construction of~$\Lambda$ th
   \leavevmode
   \begin{enumerate}
     \item
-      The ring of symmetric functions~$\Lambda$ is \emph{not} the limit of the rings of symmetric polynomials~$\Lambda^{(k)}$ in the category of (commutative) rings.
+      The ring of symmetric functions~$\Lambda$ is \emph{not} the limit of~$\Lambda^{(n+1)} \to \Lambda^{(n)}$ for~$n \geq 0$ in the category of (commutative) algebras.
     \item
-      The ring of symmetric functions~$\Lambda$ is \emph{not} isomorphic to the rings of symmetric polynomials
+      The ring of symmetric functions~$\Lambda$ is \emph{not} isomorphic to the algebras of symmetric polynomials
       \[
         \Complex[x_1, x_2, x_3, \dotsc]^{\symm_{\Natural}}
         \quad\text{or}\quad
@@ -895,51 +830,51 @@ For any two symmetric functions~$f$,~$g$ we have by construction of~$\Lambda$ th
       \]
       where~$\symm_\infty = \colim_{n \geq 0} (\symm_n \hookrightarrow \symm_{n+1})$.
   \end{enumerate}
-  (See \cref{wrong symmetric functions} for more details.)
+  See \cref{wrong symmetric functions} for more details on this.
 \end{warning}
 
 
 
 \subsection{The Fundamental Theorem on Symmetric Functions}
 
-The \defemph{fundamental theorem of symmetric polynomials} asserts that for every number of variables~$k \geq 0$ the elementary symmetric polynomials
+The \defemph{fundamental theorem of symmetric polynomials} asserts that for every number of variables~$n \geq 0$ the elementary symmetric polynomials
 \[
-  e^{(k)}_1, \dotsc, e^{(k)}_k
+  e^{(n)}_1, \dotsc, e^{(n)}_n
 \]
-form an algebraically independent generating set for the algebra of symmetric polynomials~$\Lambda^{(k)}$.
+form an algebraically independent generating set for the algebra of symmetric polynomials~$\Lambda^{(n)}$.
 It follows from this that both
 \[
-  h^{(k)}_1, \dotsc, h^{(k)}_k
+  h^{(n)}_1, \dotsc, h^{(n)}_n
   \quad\text{and}\quad
-  p^{(k)}_1, \dotsc, p^{(k)}_k
+  p^{(n)}_1, \dotsc, p^{(n)}_n
 \]
-also form algebraically independent algebra generating set for~$\Lambda^{(k)}$.%
+also form algebraically independent algebra generating set for~$\Lambda^{(n)}$.%
 \footnote{
-  For the elementary symmetric polynomials~$e^{(k)}_i$ and homogeneous symmetric polynomials~$h^{(k)}_i$ these statements do not only hold over the ground field~$\Complex$, but over every commutative ring.
-  For the power symmetric polynomials~$p^{(k)}_i$ we need to work over a field in which the numbers~$1, \dotsc, k$ are invertible.
+  For the elementary symmetric polynomials~$e^{(n)}_k$ and homogeneous symmetric polynomials~$h^{(n)}_k$ these statements do not only hold over the ground field~$\Complex$, but over every commutative ring.
+  For the power symmetric polynomials~$p^{(n)}_k$ we need to work over a field in which the numbers~$1, \dotsc, n$ are invertible.
 }
 
 For every partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ we can consider the symmetric polynomials
 \[
-  e^{(k)}_\lambda
+  e^{(n)}_\lambda
   \defined
-  e^{(k)}_{\lambda_1} \dotsm e^{(k)}_{\lambda_l} \,,
+  e^{(n)}_{\lambda_1} \dotsm e^{(n)}_{\lambda_l} \,,
   \qquad
-  h^{(k)}_\lambda
+  h^{(n)}_\lambda
   \defined
-  h^{(k)}_{\lambda_1} \dotsm h^{(k)}_{\lambda_l} \,,
+  h^{(n)}_{\lambda_1} \dotsm h^{(n)}_{\lambda_l} \,,
   \qquad
-  p^{(k)}_\lambda
+  p^{(n)}_\lambda
   \defined
-  p^{(k)}_{\lambda_1} \dotsm p^{(k)}_{\lambda_l} \,.
+  p^{(n)}_{\lambda_1} \dotsm p^{(n)}_{\lambda_l} \,.
 \]
 We have just formulated that the symmetric polynomials
 \[
-  e^{(k)}_\lambda
-  \quad
-  \text{for $\lambda \in \Par$ with length~$\length(\lambda) \leq k$}
+  e^{(n)}_\lambda
+  \qquad
+  \text{for $\lambda \in \Par$ with length~$\length(\lambda) \leq n$}
 \]
-form a vector space basis for~$\Lambda^{(k)}$, and similarly for~$h^{(k)}_\lambda$ and~$p^{(k)}_\lambda$.
+form a vector space basis for~$\Lambda^{(n)}$, and similarly for~$h^{(n)}_\lambda$ and~$p^{(n)}_\lambda$.
 We can generalize these families of symmetric polynomials to symmetric functions:
 
 \begin{example}
@@ -960,42 +895,42 @@ We can generalize these families of symmetric polynomials to symmetric functions
   and note that
   \begin{align*}
     \SwapAboveDisplaySkip
-    e_\lambda(x_1, \dotsc, x_k)
+    e_\lambda(x_1, \dotsc, x_n)
     &=
-    e^{(k)}_\lambda(x_1, \dotsc, x_k) \,,
+    e^{(n)}_\lambda \,,
     \\
-    h_\lambda(x_1, \dotsc, x_k)
+    h_\lambda(x_1, \dotsc, x_n)
     &=
-    h^{(k)}_\lambda(x_1, \dotsc, x_k) \,,
+    h^{(n)}_\lambda \,,
     \\
-    p_\lambda(x_1, \dotsc, x_k)
+    p_\lambda(x_1, \dotsc, x_n)
     &=
-    p^{(k)}_\lambda(x_1, \dotsc, x_k) \,.
+    p^{(n)}_\lambda \,.
   \end{align*}
 \end{example}
 
 Another important family of symmetric polynomials are the \defemph{monomial symmetric polynomials}:
-For every number of variables~$k \geq 0$ and partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ of length~$l = \length(\lambda) \leq k$ the corresponding monomial symmetric polynomial is given by
+For every number of variables~$n \geq 0$ and partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ of length~$l = \length(\lambda) \leq n$ the corresponding monomial symmetric polynomial is given by
 \[
-  m^{(k)}_\lambda(x_1, \dotsc, x_k)
+  m^{(n)}_\lambda(x_1, \dotsc, x_n)
   =
   \sum \text{distinct permutations of~$x_1^{\lambda_1} \dotsm x_l^{\lambda_l}$} \,.
 \]
-These homogeneous polynomials also form a basis of~$\Lambda^{(k)}$.
+These homogeneous polynomials also form a basis of~$\Lambda^{(n)}$.
 They too can be generalized to symmetric functions.
 
 \begin{example}
-  For~$k \geq 0$ any any partition~$\lambda \in \Par$ of length~$\length(\lambda) > k$ we set
+  For every number of variables~$n \geq 0$ and any partition~$\lambda \in \Par$ of length~$\length(\lambda) > n$ we set
   \[
-    m^{(k)}_\lambda \defined 0 \,.
+    m^{(n)}_\lambda \defined 0 \,.
   \]
   Then
   \[
-    m^{(k+1)}_\lambda(x_1, \dotsc, x_k, 0)
+    m^{(n+1)}_\lambda(x_1, \dotsc, x_n, 0)
     =
-    m^{(k)}_\lambda
+    m^{(n)}_\lambda
   \]
-  for every~$k \geq 0$, and each~$m_\lambda^{(k)}$ is homogeneous of degree~$\size{\lambda}$.
+  for every~$n \geq 0$, and each~$m_\lambda^{(n)}$ is homogeneous of degree~$\size{\lambda}$.
   We therefore get a well-defined homogeneous symmetric function
   \[
     m_\lambda
@@ -1010,25 +945,25 @@ The key observation behind this is the following:
 
 \begin{proposition}
   \label{sequence stabilizes}
-  The map~$\Lambda^{(k+1)}_n \to \Lambda^{(k)}_n$ is an isomorphism whenever~$k \geq n$. 
+  The map~$\Lambda^{(n+1)}_k \to \Lambda^{(n)}_k$ is an isomorphism whenever~$n \geq k$. 
 \end{proposition}
 
 \begin{proof}
-  A vector space basis of~$\Lambda^{(k)}_n$ is given by the symmetric polynomials~$e^{(k)}_\lambda$ where the partition~$\lambda$ is of length~$\length(\lambda) \leq k$ and~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ satisfies
+  A vector space basis of~$\Lambda^{(n)}_k$ is given by the symmetric polynomials~$e^{(n)}_\lambda$ where the partition~$\lambda$ is of length~$\length(\lambda) \leq n$ and~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ satisfies
   \[
-    \lambda_1 + 2 \lambda_2 + \dotsb + l \lambda_l = n \,.
+    \lambda_1 + 2 \lambda_2 + \dotsb + l \lambda_l = k \,.
   \]
-  A vector space basis of~$\Lambda^{(k)}_n$ is given by the symmetric polynomials~$e^{(k+1)}_\mu$ where the partition~$\mu$ is of length~$\length(\mu) \leq k+1$ and~$\mu = (\mu_1, \dotsc, \mu_l)$ satisfies
+  A vector space basis of~$\Lambda^{(n)}_k$ is given by the symmetric polynomials~$e^{(n+1)}_\mu$ where the partition~$\mu$ is of length~$\length(\mu) \leq n+1$ and~$\mu = (\mu_1, \dotsc, \mu_l)$ satisfies
   \[
-    \mu_1 + 2 \mu_2 + \dotsb + l \mu_l = n \,.
+    \mu_1 + 2 \mu_2 + \dotsb + l \mu_l = k \,.
   \]
-  We find by degree reasons that the case~$\length(\mu) = k+1$ cannot occur.
-  The linear map~$\Lambda^{(k+1)}_n \to \Lambda^{(k)}_n$ does therefore restrict to a bijection between the above bases.
+  We find by degree reasons that the case~$\length(\mu) = n+1$ cannot occur.
+  The linear map~$\Lambda^{(n+1)}_k \to \Lambda^{(n)}_k$ does therefore restrict to a bijection between the above bases.
 \end{proof}
 
 \begin{corollary}
   \label{iso in each degree for sufficiently large}
-  The map~$\Lambda_n \to \Lambda^{(k)}_n$ is an isomorphism whenever~$k \geq n$.
+  The map~$\Lambda_k \to \Lambda^{(n)}_k$ is an isomorphism whenever~$n \geq k$.
   \qed
 \end{corollary}
 
@@ -1048,11 +983,11 @@ The key observation behind this is the following:
 \end{corollary}
 
 \begin{corollary}
-  The elementary symmetric functions~$e_n$ with~$n \geq 1$ form an algebraically independent algebra generating set for~$\Lambda$, and similarly for the~$h_n$ and the~$p_n$.
+  The elementary symmetric functions~$e_k$ with~$k \geq 1$ form an algebraically independent algebra generating set for~$\Lambda$, and similarly the~$h_k$ and the~$p_k$.
 \end{corollary}
 
 \begin{corollary}
-  We have~$\Lambda \cong \Complex[X_1, X_2, X_3, \dotsc]$ as graded algebras, where each variable~$X_n$ is homogeneous of degree~$n$.
+  We have~$\Lambda \cong \Complex[X_1, X_2, X_3, \dotsc]$ as graded algebras, where each variable~$X_k$ is homogeneous of degree~$k$.
 \end{corollary}
 
 \begin{remark}
@@ -1063,10 +998,10 @@ The key observation behind this is the following:
       \[
         f = g
         \iff
-        \text{$f(x_1, \dotsc, x_k) = g(x_1, \dotsc, x_k)$ for some~$k \geq \deg(f), \deg(g)$.}
+        \text{$f(x_1, \dotsc, x_n) = g(x_1, \dotsc, x_n)$ for some~$n \geq \deg(f), \deg(g)$.}
       \]
     \item
-      We can regard~$\Lambda$ as a colimit of~$\Lambda^{(k)} \to \Lambda^{(k+1)}$ for~$k \geq 0$, see \cref{symmetric functions as colimit}.
+      We can regard~$\Lambda$ as a colimit of suitable inclusions~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ for~$n \geq 0$, see \cref{symmetric functions as colimit}.
   \end{enumerate}
 \end{remark}
 
@@ -1075,31 +1010,31 @@ The key observation behind this is the following:
 \subsection{Hopf Algebra Structure}
 
 We can endow the algebra of symmetric functions~$\Lambda$ with the structure of a graded Hopf algebra.
-We have now for any two number of variables~$k, l \geq 0$ a homomorphism of graded algebras
+We have now for any two number of variables~$n, m \geq 0$ a homomorphism of graded algebras
 \begin{align*}
-  \Delta_{kl}
+  \Delta_{nm}
   \colon
-  \Lambda^{(k+l)}
+  \Lambda^{(n+m)}
   &=
-  \Complex[x_1, \dotsc, x_{k+l}]^{\symm_{k+l}}
+  \Complex[x_1, \dotsc, x_{n+m}]^{\symm_{n+m}}
   \\
   &\subseteq
-  \Complex[x_1, \dotsc, x_{k+l}]^{\symm_k \times \symm_l}
+  \Complex[x_1, \dotsc, x_{n+m}]^{\symm_n \times \symm_m}
   \\
   &\cong
-  ( \Complex[x_1, \dotsc, x_k] \tensor \Complex[x_{k+1}, \dotsc, x_{k+l}] )^{\symm_k \times \symm_l}
+  ( \Complex[x_1, \dotsc, x_n] \tensor \Complex[x_{n+1}, \dotsc, x_{n+m}] )^{\symm_n \times \symm_m}
   \\
   &\cong
-  ( \Complex[x_1, \dotsc, x_k] \tensor \Complex[x_1, \dotsc, x_l] )^{\symm_k \times \symm_l}
+  ( \Complex[x_1, \dotsc, x_n] \tensor \Complex[x_1, \dotsc, x_m] )^{\symm_n \times \symm_m}
   \\
   &=
-  \Complex[x_1, \dotsc, x_k]^{\symm_k} \tensor \Complex[x_1, \dotsc, x_l]^{\symm_l}
+  \Complex[x_1, \dotsc, x_n]^{\symm_n} \tensor \Complex[x_1, \dotsc, x_m]^{\symm_m}
   \tag{\cref{invariants of tensor product}}
   \\
   &=
-  \Lambda^{(k)} \tensor \Lambda^{(l)}.
+  \Lambda^{(n)} \tensor \Lambda^{(m)}.
 \end{align*}
-We would like to have a homomorphism of graded algebras~$\Delta \colon \Lambda \to \Lambda \tensor \Lambda$ such that for all degrees~$k, l \geq 0$ the square diagram
+We would like to have a homomorphism of graded algebras~$\Delta \colon \Lambda \to \Lambda \tensor \Lambda$ such that for any number of variables~$n, m \geq 0$ the square diagram
 \[
   \begin{tikzcd}
     \Lambda
@@ -1109,36 +1044,36 @@ We would like to have a homomorphism of graded algebras~$\Delta \colon \Lambda \
     \Lambda \tensor \Lambda
     \arrow{d}
     \\
-    \Lambda^{(k+l)}
-    \arrow{r}[above]{\Delta_{kl}}
+    \Lambda^{(n+m)}
+    \arrow{r}[above]{\Delta_{nm}}
     &
-    \Lambda^{(k)} \tensor \Lambda^{(l)}
+    \Lambda^{(n)} \tensor \Lambda^{(m)}
   \end{tikzcd}
 \]
 commutes.
-The composition~$\Lambda \to \Lambda^{(k)} \tensor \Lambda^{(l)}$ is given on the algebra generators~$p_n$ of~$\Lambda$ by
+The composition~$\Lambda \to \Lambda^{(n)} \tensor \Lambda^{(m)}$ is given on the algebra generators~$p_k$ of~$\Lambda$ by
 \[
-  p_n \mapsto p^{(k)}_n \tensor 1 + 1 \tensor p^{(l)}_n \,.
+  p_k \mapsto p^{(n)}_k \tensor 1 + 1 \tensor p^{(m)}_k \,.
 \]
 Such an algebra homomorphism~$\Delta$ is thus given by
 \[
-  \Delta(p_n) = p_n \tensor 1 + 1 \tensor p_n \,.
+  \Delta(p_k) = p_k \tensor 1 + 1 \tensor p_k \,.  
 \]
-This homomorphism exists because~$\Lambda$ is the free commutative algebra on the generators~$p_n$.
+This homomorphism exists because~$\Lambda$ is the free commutative algebra on the generators~$p_k$.
 % TODO: Uniqueness?
 
 The homomorphism~$\Delta$ makes the algebra~$\Lambda$ into a cocommutative, graded bialgebra.
 The counit is given on algebra generators by
 \[
-  \varepsilon(p_n) = 0
+  \varepsilon(p_k) = 0
 \]
-for every~$n \geq 0$.
+for every~$k \geq 0$.
 Since~$\Lambda$ is graded and connected it follows that it is already a graded Hopf algebra.
 Its antipode is given on algebra generators by
 \[
-  S(p_n) = -p_n
+  S(p_k) = -p_k
 \]
-for every~$n \geq 0$.
+for every~$k \geq 0$.
 
 We see altogether that~$\Lambda$ is a commutative, cocommutative, graded Hopf algebra.
 
@@ -1151,32 +1086,32 @@ We see altogether that~$\Lambda$ is a commutative, cocommutative, graded Hopf al
 Both~$\Hall(Q, \Finite_1)$ and~$\Lambda$ are commutative, cocommutate, graded Hopf algebras.
 They are isomorphic as graded Hopf Algebras:
 
-The ring of symmetric functions~$\Lambda$ has is, as a commutative algebra, freely generated by the power symmetric functions~$p_1, p_2, \dotsc$
+The ring of symmetric functions~$\Lambda$ is, as a commutative algebra, freely generated by the power symmetric functions~$p_1, p_2, p_3, \dotsc$
 There hence exists a unique, surjective algebra homomorphism~$\Phi \colon \Lambda \to \Hall(Q, \Finite_1)$ with
 \[
-  \Phi(p_i) = \class{\Nil_i}
+  \Phi(p_k) = \class{\Nil_k}
 \]
-for every~$i \geq 1$.
-We note that~$\Phi$ is a homomorphism of graded algebras because both~$p_i$ and~$\class{ \Nil_i }$ are of degree~$i$.
-We also have for every degree~$n \geq 0$ that
+for every degree~$k \geq 1$.
+We note that~$\Phi$ is a homomorphism of graded algebras because both~$p_i$ and~$\class{ \Nil_k }$ are of degree~$k$.
+We also have for every degree~$k \geq 0$ that
 \[
-  \dim \Lambda_n
+  \dim \Lambda_k
   =
   \counting
   \{
-    (\lambda_1, \dotsc, \lambda_k) \in \Par
+    (\lambda_1, \dotsc, \lambda_l) \in \Par
   \suchthat
-    \lambda_1 + 2 \lambda_2 + \dotsb + k \lambda_k = n
+    \lambda_1 + 2 \lambda_2 + \dotsb + l \lambda_l = k
   \}
   =
-  \dim \Hall(Q, \Finite_1)_n \,,
+  \dim \Hall(Q, \Finite_1)_k \,,
 \]
 with these dimensions being finite.
 It thus follows from the surjectivity of~$\Phi$ that it is already an isomorphism of graded algebras.
 
 The algebra isomorphism~$\Phi$ is already an isomorphism of Hopf algebras:
-It sufficies to check that~$\Phi$ is compatible with the comultiplication of the algebra generators~$p_i$.
-This holds since~$p_i$ is primitive in~$\Lambda$ and~$\class{ \Nil_i }$ is primitive in~$\Hall(Q, \Finite_1)$.
+It sufficies to check that~$\Phi$ is compatible with the comultiplication of the algebra generators~$p_k$.
+This holds since~$p_k$ is primitive in~$\Lambda$ and~$\class{ \Nil_k }$ is primitive in~$\Hall(Q, \Finite_1)$.
 
 We have shown altogether that~$\Phi$ is an isomorphism of graded Hopf algebras.
 
@@ -1935,8 +1870,6 @@ from which it follows that~$\Ext^1(S,S) \cong \Finite_q$.
 
 
 
-
-
 \subsection{Proof of \cref{euler form is trivial}}
 \label{proof of euler form is trivial}
 
@@ -1966,7 +1899,6 @@ This proves the assertion.
 
 
 \subsection{Counting~$\Gr(d, n, \Finite_q)$}
-\label{size of quantum grassmannian}
 
 \begin{recall}
   For~$k \in \Natural$ the \defemph{quantum integer}~$\qnum{k}_q$ is given by
@@ -1986,40 +1918,41 @@ This proves the assertion.
   \]
   For~$k, l \in \Natural$ the \defemph{quantum binomial} is given by
   \[
-    \qbinomial{k}{l}_q
+    \qbinom{k}{l}_q
     =
     \frac{\qnum{k}_q \dotsm \qnum{k-l+1}_q}{\qnum{l}_q!} \,.
   \]
   If~$l > k$ then this is zero, and if~$l \leq k$ then the quantum binomial can also be expressed as
   \[
-    \qbinomial{k}{l}_q
+    \qbinom{k}{l}_q
     =
     \frac{\qnum{k}_q!}{\qnum{l}_q! \, \qnum{k-l}_q!} \,.
   \]
   The quantum binomial satsfies the recursive relation
   \[
-    \qbinomial{k}{l}_q
+    \qbinom{k}{l}_q
     =
-    q^l \qbinomial{k-1}{l}_q
+    q^l \qbinom{k-1}{l}_q
     +
-    \qbinomial{k-1}{l-1}_q
+    \qbinom{k-1}{l-1}_q
   \]
   for all~$k, l \in \Natural$.
-  It hence follows by induction that the quantum binomial~$\qbinomial{k}{l}_q$ is a polynomial in~$q$ with natural coefficients, i.e.
+  It hence follows by induction that the quantum binomial~$\qbinom{k}{l}_q$ is a polynomial in~$q$ with natural coefficients, i.e.
   \[
-    \qbinomial{k}{l}_q
+    \qbinom{k}{l}_q
     \in
     \Natural[q] \,.
   \]
-  By taking the limit~$q \to 1$ (i.e.\ by setting~$q$ equal to~$1$) the quantum integer~$\qnum{k}$ becomes the usual integer~$k$, the quantum factorial~$\qnum{k}_q!$ becomes the usual factorial~$k!$ and the quantum binomial coefficient~$\qbinomial{k}{l}_q$ becomes the usual binomial~$\binom{k}{l}$.
+  By taking the limit~$q \to 1$ (i.e.\ by setting~$q$ equal to~$1$) the quantum integer~$\qnum{k}$ becomes the usual integer~$k$, the quantum factorial~$\qnum{k}_q!$ becomes the usual factorial~$k!$ and the quantum binomial coefficient~$\qbinom{k}{l}_q$ becomes the usual binomial~$\binom{k}{l}$.
 \end{recall}
 
 \begin{lemma}
+  \label{size of quantum grassmannian}
   For all dimensions~$n, d \geq 0$ we have
   \[
     \counting {\Gr(d, n, \Finite_q)}
     =
-    \qbinomial{n}{d}_q \,.
+    \qbinom{n}{d}_q \,.
   \]
 \end{lemma}
 
@@ -2050,12 +1983,178 @@ This proves the assertion.
     =
     \frac{ \qnum{n}_q \dotsm \qnum{n-d+1}_q }{ \qnum{d}_q! }
     =
-    \qbinomial{n}{d}_q \,,
+    \qbinom{n}{d}_q \,,
   \]
   as claimed.
 \end{proof}
 
 
+
+\subsection{Computing more Structure Constants for~$\Hall(Q, \Finite_q)$}
+\label{computing more structure constants}
+
+We use for~$\Nil_{(n,1)}$ the basis~$e_1, \dotsc, e_n, f_1, \dotsc, f_m$ with
+\[
+  \alpha e_i = e_{i+1}
+  \quad\text{and}\quad
+  \alpha e_n = \alpha f_1 = \dotsb = \alpha f_m = 0
+\]
+for~$i = 1, \dotsc, n-1$, where~$\alpha$ denotes the loop of~$Q$.
+See \cref{basis for n 1}.
+\begin{figure}[tb]
+  \centering
+    \begin{tikzpicture}
+      % origin
+      \node at (0,0) (Z) {$0$};
+      % first line
+      \node at (-1, 3) (A1) {$e_1$};
+      \node at (-1, 2) (dots) {$\vdots$};
+      \node at (-1, 1) (An) {$e_n$};
+      \draw[thick] (A1) -- (dots) -- (An) -- (Z);
+      % second line
+      \node at (0, 1) (B1) {$f_1$};
+      \draw[thick] (B1) -- (Z);
+      % third line
+      \node at (1, 1) (C1) {$\cdots$};
+      % forth line
+      % second line
+      \node at (2, 1) (D1) {$f_m$};
+      \draw[thick] (D1) -- (Z);
+    \end{tikzpicture}
+    \caption{The representations~$\Nil_{(n,1)}$ over~$\Finite_q$.}
+  \label{basis for n 1}
+\end{figure}
+
+The coefficient~$C^{(n, 1^m)}_{(1^m), (n)}$ is the number of subrepresentations~$L$ of~$\Nil_{(n, 1^m)}$ with~$L \cong \Nil_n$ and~$\Nil_{(n,1)} / L \cong \Nil_{(1^m)}$.
+The condition~$L \cong \Nil_n$ means that~$L$ is cyclically generated by a vector
+\[
+  v
+  =
+  a_1 e_1 + \dotsb + a_n e_n
+  + b_1 f_1 + \dotsb + b_m f_m
+\]
+with~$a_1 \neq 0$.
+We may assume that~$a_1 = 1$.
+Then
+\begin{align*}
+  L
+  &=
+  \gen{ \alpha^k v \suchthat k \geq 0 }_{\Finite_q}
+  \\
+  &=
+  \gen{
+    e_1 + a_2 e_2 + \dotsb + a_n e_n
+    + b_1 f_1 + \dotsb + b_m f_m,
+    \,
+    e_2 + a_2 e_3 + \dotsb + a_n e_{n-1},
+    \,
+    \dotsc,
+    \,
+    e_n
+  }_{\Finite_q}
+  \\
+  &=
+  \gen{ e_1 + b_1 f_1 + \dotsb + b_m f_m, e_2, \dotsc, e_n } \,.
+\end{align*}
+For any such subrepresentation~$L$ the quotient~$\Nil_{(n, 1^m)} / L$ is~\dimensional{$m$} and spanned by the residue classes~$\class{f_1}, \dotsc, \class{f_m}$.
+It is thus isomorphic to~$\Nil_{(1^m)}$.
+We get for every choice of coefficient~$b_1, \dotsc, b_m \in \Finite_q$ a different subrepresentation of~$\Nil_{(n, 1^m)}$.
+Hence
+\[
+  C^{(n, 1^m)}_{(1^m), (n)}
+  =
+  \counting \Finite_q^m
+  =
+  q^m \,.
+\]
+
+The coefficient~$C^{(n, 1^m)}_{(n), (1^m)}$ is the number of subrepresentations~$L$ of~$\Nil_{(n, 1^m)}$ with~$L \cong \Nil_{(1^m)}$ and~$\Nil_{(n, 1^m)}/L \cong \Nil_n$.
+The condition~$L \cong \Nil_{1^m}$ means precisely that~$L$ is an~\dimensional{$m$} linear subspace of~$\gen{ e_n, f_1, \dotsc, f_m }_{\Finite_q}$.
+We note that if~$g$ is a vector of~$\gen{ e_n, f_1, \dotsc, f_m }_{\Finite_q}$ that is not contained in~$L$ then the residue classes
+\[
+  \class{e_1}, \dotsc, \class{e_n}, \class{g}
+\]
+will be a basis of the quotient~$\Nil_{(n, 1^m)} / L$.
+We claim that~$\Nil_{(n, 1^m)} / L$ is isomorphic to~$\Nil_n$ if and only if the subspace~$L$ does not contain the vector~$e_n$.
+
+Suppose first that~$e_1$ is contained in~$L$.
+Then we take for~$g$ any vector of~$\gen{e_n, f_1, \dotsc, f_n}$ not contained in~$L$.
+Then~$\alpha \class{e_{n-1}} = \class{e_n} = 0$ and we find that
+\[
+  \class{e_1}, \dotsc, \class{e_{n-1}}
+  \quad
+  \text{and}
+  \quad
+  \class{g}
+\]
+are two Jordan chains for~$\Nil_{(n, 1^m)} / L$.
+Thus~$\Nil_{(n, 1^m)} / L$ is not isomorphic to~$\Nil_n$.
+
+Suppose on the other hand that~$e_1$ not contained in~$L$.
+Then we can choose~$g$ as~$e_1$ and find that the residue classes
+\[
+  \class{e_n}, \dotsc, \class{e_1}
+\]
+form a basis of~$\Nil_{(n, 1^m)} / L$.
+This basis forms a single Jordan chain, whence~$\Nil_{(n, 1^m)} / L$ is isomorphic to~$\Nil_n$.
+
+We thus find that the structure constant~$C^{(n, 1^m)}_{(n), (1^m)}$ is the number of~\dimensional{$m$} subspaces of~$\gen{e_n, f_1, \dotsc, f_m}$ that does not contain~$e_n$.
+The number of~\dimensional{$m$} subspaces of~$\gen{e_n, f_1, \dotsc, f_m}$ is according to \cref{size of quantum grassmannian} given by the quantum binomial
+\[
+  \qbinom{m+1}{m}_q \,.
+\]
+The number of~\dimensional{$m$} subspaces of~$\gen{e_n, f_1, \dotsc, f_m}$ that contains~$e_1$ is equals the number of~\dimensional{$(m-1)$} subspaces of the quotient vector spaces~$\gen{e_n, f_1, \dotsc, f_n} / \gen{e_n} \cong \gen{f_1, \dotsc, f_m}$.
+We see again from \cref{size of quantum grassmannian} that there are
+\[
+  \qbinom{m}{m-1}_q
+\]
+such subspaces.
+We hence find that
+\[
+  C^{(n, 1^m)}_{(n), (1^m)}
+  =
+  \qbinom{m+1}{m}_q - \qbinom{m}{m-1}_q
+  =
+  \qbinom{m+1}{1}_q - \qbinom{m}{1}_q
+  =
+  \qnum{m+1}_q - \qnum{m}_q
+  =
+  q^m \,.
+\]
+
+
+%\[
+%  v = a e_n + b_1 f_1 + \dotsb + b_m f_m
+%\]
+%with~$a \neq 0$.
+%
+%If~$a \neq 0$ then we may assume that~$a = 1$, so that~$v = e_2 + b_1 f_1 + \dotsb + b_m f_m$.
+%Then~$\Nil_{(n, 1^m)} / L$ has the basis vectors~$\class{e_1}, \dotsc, \class{e_{n-1}}, \class{f_1}, \dotsc, \class{f_m}$ with~$\alpha \class{e_{n-1}} = - b_1 \class{f_1}$ and~$\alpha \class{f_j} = 0$ for every~$j = 1, \dotsc, m$.
+%Thus
+%\[
+%  \Nil_{(n, 1^m)}/L
+%  \cong
+%  \begin{cases*}
+%      \Nil_{(n, 1^{m-1})
+%      &
+%      if~$b_1 \neq 0$,
+%      \\
+%      \Nil_{(n-1, 1^m)}
+%      &
+%      if~$b = 0$.
+%  \end{cases*}
+%\]
+%In the case~$a \neq 0$ we thus have~$(q-1) q^m$ choices for~$L$.
+%%
+%If~$a = 0$ then~$b_j \neq 0$ for some~$1 \leq j \leq m$ and we may assume that~$b_j = 1$.
+%Then~$v = f$ and thus~$\Nil_{(n,1)} / L \cong \Nil_n$.
+%
+%We find altogether that there are~$q$ choices for~$L$, i.e
+%\[
+%  C^{(n,1)}_{(n),(1)}
+%  =
+%  q \,.
+%\]
 
 
 
@@ -2064,67 +2163,75 @@ This proves the assertion.
 
 For the first claim consider the symmetric polyonmials
 \[
-  f^{ (k) }(x_1, \dotsc, x_k)
+  f^{ (n) }(x_1, \dotsc, x_n)
   \defined
-  x_1 + x_1 x_2 + \dotsb + x_1 \dotsm x_k \,.
+  x_1 + x_1 x_2 + \dotsb + x_1 \dotsm x_n \,.
 \]
 The polynomials satisfy the compatibility condition
 \[
-  f^{(k+1)}(x_1, \dotsc, x_k, 0) = f^{(k)}(x_1, \dotsc, x_k)
-\]
-for every~$k \geq 0$.
-But there exists no symmetric function~$f \in \Lambda$ with~$f(x_1, \dotsc, x_k) = f^{(k)}(x_1, \dotsc, x_k)$ for every~$k \geq 0$ since otherwise
-\[
-  k
+  f^{(n+1)}(x_1, \dotsc, x_n, 0)
   =
-  \deg(f^{(k)})
+  f^{(n)}
+\]
+for every number of variables~$n \geq 0$.
+But there exists no symmetric function~$f \in \Lambda$ with
+\[
+  f(x_1, \dotsc, x_n) = f^{(n)}(x_1, \dotsc, x_n)
+\]
+for every~$n \geq 0$ since otherwise
+\[
+  n
+  =
+  \deg(f^{(n)})
   \leq
   \deg(f)
 \]
-for every~$k \geq 0$, which is not possible.
-This shows that~$\Lambda$ together with the homomorphisms~$\Lambda \to \Lambda^{(k)}$ is not the limit of the homomorphisms~$\Lambda^{(k+1)} \to \Lambda^{(k)}$ for~$k \geq 0$ in the category of rings.
+for every~$n \geq 0$, which is not possible.
+This shows that~$\Lambda$ together with the homomorphisms~$\Lambda \to \Lambda^{(n)}$ is not the limit of the homomorphisms~$\Lambda^{(n+1)} \to \Lambda^{(n)}$ for~$n \geq 0$ in the category of rings.
 
-Suppose that more generally~$( f^{(k)} )_{k \geq 0}$ is any sequence of symmetric polynomials~$f^{(k)} \in \Lambda^{(k)}$ that are compatible in the sense that~$f(x_1, \dotsc, x_k) = f^{(k)}(x_1, \dotsc, x_k)$ for every~$k \geq 0$.
-Then the~$f^{(k)}$ define a symmetric function~$f \in \Lambda$ with~$f^{(k)}(x_1, \dotsc, x_k) = f(x_1, \dotsc, x_k)$ for every~$k \geq 0$ if and only if the degrees~$\deg( f^{(k)} )$ are bounded, i.e.\ if and only if there exists some~$N \geq 0$ with~$\deg( f^{(k)} ) \leq N$ for every~$k \geq 0$.
+Suppose that more generally~$( f^{(n)} )_{n \geq 0}$ is any sequence of symmetric polynomials~$f^{(n)} \in \Lambda^{(n)}$ that are compatible in the sense that~$f(x_1, \dotsc, x_n) = f^{(n)}(x_1, \dotsc, x_n)$ for every~$n \geq 0$.
+Then the~$f^{(n)}$ define a symmetric function~$f \in \Lambda$ with~$f^{(n)}(x_1, \dotsc, x_n) = f(x_1, \dotsc, x_n)$ for every~$n \geq 0$ if and only if the degrees~$\deg( f^{(n)} )$ are bounded, i.e.\ if and only if there exists some~$K \geq 0$ with~$\deg( f^{(N)} ) \leq K$ for every~$n \geq 0$.
 
-Indeed, if such a symmetric function~$f$ exists then~$\deg( f^{(k)} ) \leq \deg(f)$ for every~$k \geq 0$.
-If on the other hand such a bound~$N$ exists then we consider for every~$n = 0, \dotsc, N$ the sequence~$( f^{(k)}_n )_{k \geq 0}$ of degree~$n$ parts.
-That the symmetric polynomials~$f^{(k)}$ are compatible means that for every degree~$n = 0, \dotsc, N$ the homogeneous symmetric polynomials~$f^{(k)}_n$ are compatible.
-Thus there exists for every degree~$n = 0, \dotsc, N$ a homogeneous symmetric function~$f_n \in \Lambda_n$ with
+Indeed, if such a symmetric function~$f$ exists then~$\deg( f^{(n)} ) \leq \deg(f)$ for every~$n \geq 0$.
+If on the other hand such a bound~$K$ exists then we consider for every~$k = 0, \dotsc, K$ the sequence~$( f^{(n)}_k )_{n \geq 0}$ of degree~$k$ parts.
+That the symmetric polynomials~$f^{(n)}$ are compatible means that for every degree~$k = 0, \dotsc, K$ the homogeneous symmetric polynomials~$f^{(n)}_k$ are compatible.
+Thus there exists for every degree~$k = 0, \dotsc, K$ a homogeneous symmetric function~$f_k \in \Lambda_k$ with
 \[
-  f_n(x_1, \dots, x_k)
+  f_k(x_1, \dots, x_n)
   =
-  f^{(k)}_n(x_1, \dotsc, x_k)
+  f^{(n)}_k(x_1, \dotsc, x_n)
 \]
-for every~$k \geq 0$.
+for every number of variables~$n \geq 0$.
 It then follows for the symmetric function
 \[
   f
   \defined
-  f_0 + f_1 + \dotsb + f_N
+  f_0 + f_1 + \dotsb + f_K
 \]
-in each degree~$m = 0, \dotsc, N$ that
+in each degree~$l = 0, \dotsc, K$ that
 \[
-  f(x_1, \dotsc, x_k)_m
+  f(x_1, \dotsc, x_n)_l
   =
-  f_0(x_1, \dotsc, x_k)_n
+  f_0(x_1, \dotsc, x_n)_k
   +
   \dotsb
   +
-  f_n(x_1, \dotsc, x_k)_m
+  f_k(x_1, \dotsc, x_n)_l
   =
-  f_m(x_1, \dotsc, x_k)
+  f_l(x_1, \dotsc, x_n)
   =
-  f^{(k)}_m(x_1, \dotsc, x_k)
+  f^{(n)}_l(x_1, \dotsc, x_n)
 \]
-for every~$k \geq 0$ since each~$f_l(x_1, \dotsc, x_k)$ is homogeneous of degree~$m$.
+for every~$n \geq 0$ since each~$f_l(x_1, \dotsc, x_n)$ is homogeneous of degree~$l$.
 This shows that
 \[
-  f(x_1, \dotsc, x_k) = f^{(k)}(x_1, \dotsc, x_k)
+  f(x_1, \dotsc, x_n)
+  =
+  f^{(n)}(x_1, \dotsc, x_n)
 \]
-for every~$k \geq 0$.
+for every number of variables~$n \geq 0$.
 
-To see the second claim we note that both~$\Complex[x_1, x_2, \dotsc]^{\symm_{\Natural}}$ and~$\Complex[x_1, \dotsc, x_n]^{\symm_\infty}$ are just~$\Complex$.
+To see the second claim we note that both~$\Complex[x_1, x_2, x_3, \dotsc]^{\symm_{\Natural}}$ and~$\Complex[x_1, x_2, x_3, \dotsc]^{\symm_\infty}$ are just~$\Complex$.
 Indeed, if a symmetric polynomial~$f \in \Complex[x_1, x_2, \dotsc]$ were to contain a nontrivial monomial then it must also contain all permutations of this monomial.
 But there are infinitely many such permutations, while~$f$ contains only finitely many polynomials.
 
@@ -2132,21 +2239,21 @@ But there are infinitely many such permutations, while~$f$ contains only finitel
 \subsection{Regarding~$\Lambda$ as a Colimit}
 \label{symmetric functions as colimit}
 
-We have for every number of variables~$k \geq 0$ an injective homomorphism of graded algebras~$\Lambda^{(k)} \to \Lambda^{(k+1)}$ that is given on algebra generators by~$e^{(k)}_n \to e^{(k+1)}_n$ for every~$n = 0, \dotsc, k$.
-This is a right sided inverse for the homomorphism~$\Lambda^{(k+1)} \to \Lambda^{(k)}$.
-In this way a symmetric polynomial in~$k$~variables can be extended to a symmetric polynomial in~$k+1$~variables.
+We have for every number of variables~$n \geq 0$ an injective homomorphism of graded algebras~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ that is given on algebra generators by~$e^{(n)}_k \to e^{(n+1)}_k$ for every~$k = 0, \dotsc, n$.
+This is a right sided inverse for the homomorphism~$\Lambda^{(n+1)} \to \Lambda^{(n)}$.
+In this way a symmetric polynomial in~$n$~variables can be extended to a symmetric polynomial in~$n+1$~variables.
 
-We similarly have for every number of variables~$k \geq 0$ a homomorphism of graded algebras~$\Lambda^{(k)} \to \Lambda$ that is given on algebra generators by~$e^{(k)}_n \to e_n$ for every~$n = 0, \dotsc, k$.
+We similarly have for every number of variables~$n \geq 0$ a homomorphism of graded algebras~$\Lambda^{(n)} \to \Lambda$ that is given on algebra generators by~$e^{(n)}_k \to e_k$ for every~$k = 0, \dotsc, k$.
 
-We now find that~$\Lambda$ together with the homomorphisms~$\Lambda^{(k)} \to \Lambda$ is a colimit of the homomorphisms~$\Lambda^{(k)} \to \Lambda^{(k+1)}$ for~$k \geq 0$.
+We now find that~$\Lambda$ together with the homomorphisms~$\Lambda^{(n)} \to \Lambda$ is a colimit of the homomorphisms~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ for~$n \geq 0$.
 In this way we can regard~$\Lambda$ as a sort of increasing union of the algebras of symmetric polynomials.
 
 
 
 \subsection{Invariants of a Tensor Product}
-\label{invariants of tensor product}
 
 \begin{lemma}
+  \label{invariants of tensor product}
   Let~$G$,~$H$ be two groups.
   Let~$V$ be a representation of~$G$ and let~$W$ be a representation of~$H$.
   Then
