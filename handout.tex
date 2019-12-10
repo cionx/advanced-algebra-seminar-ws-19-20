@@ -52,6 +52,7 @@ In the case that~$\kf$ is also algebraically closed, or that it is~$\Finite_1$, 
 
 A representation~$(V, f)$ of the Jordan quiver is nilpotent (in the sense of \cref{recalling nilpotent representations}) if and only if the endomorphism~$f$ is nilpotent.
 We will in the rest of this talk restrict our attention to finite-dimensional, nilpotent representations of the Jordan quiver.
+
 As introduced in the previous talks we denote by
 \[
   \repnil(Q, \kf)
@@ -61,7 +62,7 @@ We denote the set of isomorphism classes of~$\repnil(Q, \kf)$ by
 \[
   \Iso(Q, \kf)
   \defined
-  \repnil(Q, \kf) / {\sim} \,.
+  \repnil(Q, \kf) / {\cong} \,.
 \]
 (We will see in \cref{representatives via partitions} that this is indeed a set.)
 
@@ -101,91 +102,93 @@ We can therefore classify the isomorphism classes of~$\repnil(Q, \kf)$:
   \]
 \end{definition}
 
-See \cref{nilpotent representation example} for a visualization of~$\Nil_{(d_1, \dotsc, d_n)}$.
-\begin{figure}[tb]
-  \centering
-    \begin{tikzpicture}
-      % origin
-      \node at (0,0) (Z) {$0$};
-      % first line
-      \node at (-1.5,1) (A1) {};
-      \node at (-1.5,2) (A2) {};
-      \node at (-1.5,3) (A3) {};
-      \node at (-1.5,4) (A4) {};
-      \draw[fill = black] (A1) circle (0.05);
-      \draw[fill = black] (A2) circle (0.05);
-      \draw[fill = black] (A3) circle (0.05);
-      \draw[fill = black] (A4) circle (0.05);
-      \draw[thick] (A4) -- (A3) -- (A2) -- (A1) -- (Z);
-      % second line
-      \node at (-0.5,1) (B1) {};
-      \node at (-0.5,2) (B2) {};
-      \node at (-0.5,3) (B3) {};
-      \draw[fill = black] (B1) circle (0.05);
-      \draw[fill = black] (B2) circle (0.05);
-      \draw[fill = black] (B3) circle (0.05);
-      \draw[thick] (B3) -- (B2) -- (B1) -- (Z);
-      % third line
-      \node at (0.5,1) (C1) {};
-      \node at (0.5,2) (C2) {};
-      \node at (0.5,3) (C3) {};
-      \draw[fill = black] (C1) circle (0.05);
-      \draw[fill = black] (C2) circle (0.05);
-      \draw[fill = black] (C3) circle (0.05);
-      \draw[thick] (C3) -- (C2) -- (C1) -- (Z);
-      % fourth line
-      \node at (1.5,1) (D1) {};
-      \node at (1.5,2) (D2) {};
-      \draw[fill = black] (D1) circle (0.05);
-      \draw[fill = black] (D2) circle (0.05);
-      \draw[thick] (D2) -- (D1) -- (Z);
-    \end{tikzpicture}
-    \qquad\qquad
-    \begin{tikzpicture}
-      % origin
-      \node at (0,0) (Z) {$0$};
-      % first line
-      \node at (-2,1) (A1) {};
-      \node at (-2,2) (A2) {};
-      \draw[fill = black] (A1) circle (0.05);
-      \draw[fill = black] (A2) circle (0.05);
-      \draw[thick] (A2) -- (A1) -- (Z);
-      % second line
-      \node at (-1,1) (B1) {};
-      \node at (-1,2) (B2) {};
-      \node at (-1,3) (B3) {};
-      \draw[fill = black] (B1) circle (0.05);
-      \draw[fill = black] (B2) circle (0.05);
-      \draw[fill = black] (B3) circle (0.05);
-      \draw[thick] (B3) -- (B2) -- (B1) -- (Z);
-      % third line
-      \node at (-0,1) (C1) {};
-      \node at (-0,2) (C2) {};
-      \draw[fill = black] (C1) circle (0.05);
-      \draw[fill = black] (C2) circle (0.05);
-      \draw[thick] (C2) -- (C1) -- (Z);
-      % fourth line
-      \node at (1,1) (D1) {};
-      \node at (1,2) (D2) {};
-      \node at (1,3) (D3) {};
-      \node at (1,4) (D4) {};
-      \draw[fill = black] (D1) circle (0.05);
-      \draw[fill = black] (D2) circle (0.05);
-      \draw[fill = black] (D3) circle (0.05);
-      \draw[fill = black] (D4) circle (0.05);
-      \draw[thick] (D4) -- (D3) -- (D2) -- (D1) -- (Z);
-      % fifth line
-      \node at (2,1) (E1) {};
-      \node at (2,2) (E2) {};
-      \node at (2,3) (E3) {};
-      \draw[fill = black] (E1) circle (0.05);
-      \draw[fill = black] (E2) circle (0.05);
-      \draw[fill = black] (E3) circle (0.05);
-      \draw[thick] (E3) -- (E2) -- (E1) -- (Z);
-    \end{tikzpicture}
-    \caption{The representations~$\Nil_{(4,3,3,2)}$ and~$\Nil_{(2, 3, 2, 4, 3)}$ over~$\Finite_1$.}
-  \label{nilpotent representation example}
-\end{figure}
+\begin{example}  
+  See \cref{nilpotent representation example} for a visualization of~$\Nil_{(d_1, \dotsc, d_n)}$.
+  \begin{figure}[tb]
+    \centering
+      \begin{tikzpicture}
+        % origin
+        \node at (0,0) (Z) {$0$};
+        % first line
+        \node at (-1.5,1) (A1) {};
+        \node at (-1.5,2) (A2) {};
+        \node at (-1.5,3) (A3) {};
+        \node at (-1.5,4) (A4) {};
+        \draw[fill = black] (A1) circle (0.05);
+        \draw[fill = black] (A2) circle (0.05);
+        \draw[fill = black] (A3) circle (0.05);
+        \draw[fill = black] (A4) circle (0.05);
+        \draw[thick] (A4) -- (A3) -- (A2) -- (A1) -- (Z);
+        % second line
+        \node at (-0.5,1) (B1) {};
+        \node at (-0.5,2) (B2) {};
+        \node at (-0.5,3) (B3) {};
+        \draw[fill = black] (B1) circle (0.05);
+        \draw[fill = black] (B2) circle (0.05);
+        \draw[fill = black] (B3) circle (0.05);
+        \draw[thick] (B3) -- (B2) -- (B1) -- (Z);
+        % third line
+        \node at (0.5,1) (C1) {};
+        \node at (0.5,2) (C2) {};
+        \node at (0.5,3) (C3) {};
+        \draw[fill = black] (C1) circle (0.05);
+        \draw[fill = black] (C2) circle (0.05);
+        \draw[fill = black] (C3) circle (0.05);
+        \draw[thick] (C3) -- (C2) -- (C1) -- (Z);
+        % fourth line
+        \node at (1.5,1) (D1) {};
+        \node at (1.5,2) (D2) {};
+        \draw[fill = black] (D1) circle (0.05);
+        \draw[fill = black] (D2) circle (0.05);
+        \draw[thick] (D2) -- (D1) -- (Z);
+      \end{tikzpicture}
+      \qquad\qquad
+      \begin{tikzpicture}
+        % origin
+        \node at (0,0) (Z) {$0$};
+        % first line
+        \node at (-2,1) (A1) {};
+        \node at (-2,2) (A2) {};
+        \draw[fill = black] (A1) circle (0.05);
+        \draw[fill = black] (A2) circle (0.05);
+        \draw[thick] (A2) -- (A1) -- (Z);
+        % second line
+        \node at (-1,1) (B1) {};
+        \node at (-1,2) (B2) {};
+        \node at (-1,3) (B3) {};
+        \draw[fill = black] (B1) circle (0.05);
+        \draw[fill = black] (B2) circle (0.05);
+        \draw[fill = black] (B3) circle (0.05);
+        \draw[thick] (B3) -- (B2) -- (B1) -- (Z);
+        % third line
+        \node at (-0,1) (C1) {};
+        \node at (-0,2) (C2) {};
+        \draw[fill = black] (C1) circle (0.05);
+        \draw[fill = black] (C2) circle (0.05);
+        \draw[thick] (C2) -- (C1) -- (Z);
+        % fourth line
+        \node at (1,1) (D1) {};
+        \node at (1,2) (D2) {};
+        \node at (1,3) (D3) {};
+        \node at (1,4) (D4) {};
+        \draw[fill = black] (D1) circle (0.05);
+        \draw[fill = black] (D2) circle (0.05);
+        \draw[fill = black] (D3) circle (0.05);
+        \draw[fill = black] (D4) circle (0.05);
+        \draw[thick] (D4) -- (D3) -- (D2) -- (D1) -- (Z);
+        % fifth line
+        \node at (2,1) (E1) {};
+        \node at (2,2) (E2) {};
+        \node at (2,3) (E3) {};
+        \draw[fill = black] (E1) circle (0.05);
+        \draw[fill = black] (E2) circle (0.05);
+        \draw[fill = black] (E3) circle (0.05);
+        \draw[thick] (E3) -- (E2) -- (E1) -- (Z);
+      \end{tikzpicture}
+      \caption{The representations~$\Nil_{(4,3,3,2)}$ and~$\Nil_{(2, 3, 2, 4, 3)}$ over~$\Finite_1$.}
+    \label{nilpotent representation example}
+  \end{figure}
+\end{example}
 
 \begin{definition}
   For every~$n \geq 0$ let~$\Par(n)$ be the set of partition of the number~$n$, i.e.\
@@ -196,7 +199,9 @@ See \cref{nilpotent representation example} for a visualization of~$\Nil_{(d_1, 
       (\lambda_1, \dotsc, \lambda_l)
     \suchthat*
       \begin{array}{@{}l@{}}
-        \lambda_1 \geq \dotsb \geq \lambda_l \geq 1,
+        \text{$\lambda_1, \dotsc, \lambda_l$ are integral}
+        \\
+        \lambda_1 \geq \dotsb \geq \lambda_l \geq 1
         \\
         \lambda_1 + \dotsb + \lambda_l = n
       \end{array}
@@ -232,7 +237,8 @@ We find in particular that the category~$\repnil(Q, \kf)$ is essentially small, 
 \section{The Hall~Algebra of the Jordan Quiver over~$\Finite_q$}
 
 We will now consider for~$\kf$ the finite field~$\Finite_q$.
-We want to consider in the following the Hall algebra of the category~$\repnil(Q, \Finite_q)$.
+Then~$\repnil(Q, \Finite_q)$ is an abelian, finitary, full, exact subcategory of~$\Rep(Q, \Finite_q)$.
+We want to consider in the following the Hall algebra of~$\repnil(Q, \Finite_q)$.
 For this we need to understand its Euler form.
 
 \begin{proposition}
@@ -251,7 +257,8 @@ For this we need to understand its Euler form.
 \end{proof}
 
 \begin{lemma}
-  Let~$S \defined \Nil_1$.
+  \label{controlling ext}
+  Let~$S \defined \Nil_1 = (\kf, \begin{bmatrix} 0 \end{bmatrix})$.
   \begin{enumerate}
     \item
       The representation~$S$ is the unique simple object of~$\repnil(Q, \Finite_q)$ (up to isomorphism).
@@ -270,19 +277,7 @@ For this we need to understand its Euler form.
 \end{lemma}
 
 \begin{proof}
-  \leavevmode
-  \begin{enumerate}
-    \item
-      The indecomposable objects of~$\repnil(Q, \Finite_q)$ are precisely~$\Nil_i$ with~$i \geq 1$.
-      The representation~$\Nil_i$ has (up to isomorphism) the subrepresentations~$\Nil_j$ with~$j = 0, \dotsc, i$.
-      Thus only~$\Nil_1$ is simple.
-    \item
-      This follows from the previous assertion since~ each objects of~$\repnil(Q, \Finite_q)$ admits a composition series, whose composition factors are necessarily~$S$.
-    \item      
-      For the first assertion we note that~$\Hom(S, S) = \Finite_q$ because~$S$ is one-dimensional.      
-      For the computation of~$\Ext^1(S,S)$ see \cref{computing ext}.
-    \qedhere
-  \end{enumerate}
+  See \cref{proof of controlling ext}.
 \end{proof}
 
 \begin{corollary}
@@ -322,17 +317,17 @@ We are thus well-prepared to consider the Hall algebra~$\Hall(Q, \Finite_q)$.
   \item
     The category~$\repnil(Q, \Finite_q)$ satisfies the finite subobject condition and its Euler form vanishes.%
     \footnote{%
-      We say that a category~$\Acat$ satisfies the \defemph{finite suboject condition} if every object of~$\Acat$ admits only finitely many subobjects.
+      We say that a category~$\Acat$ satisfies the \defemph{finite subobject condition} if every object of~$\Acat$ admits only finitely many subobjects.
     }
     It follows that Green’s coproduct makes the Hall algebra~$\Hall(Q, \Finite_q)$ into a bialgebra.
     Its comultiplication is given by
     \[
       \Delta(\class{M})
       =
-      \sum_{\class{M}, \class{N} \in \Iso(Q, \Finite_q)}
-      \frac{ P^R_{M,N} }{a_R} \class{M} \tensor \class{N}
+      \sum_{\class{R}, \class{L} \in \Iso(Q, \Finite_q)}
+      \frac{ P^M_{R,L} }{a_M} \class{R} \tensor \class{L}
     \]
-    where~$a_R$ is the size of the automorphism group~$\Aut(R)$, and~$P^R_{M,N}$ is the number of short exact sequences~$0 \to N \to R \to M \to 0$.
+    where~$a_M$ is the size of the automorphism group~$\Aut(M)$, and~$P^M_{R,L}$ is the number of short exact sequences~$0 \to L \to M \to R \to 0$.
     % TODO: Right formula for comultiplication?
     The counit~$\varepsilon \colon \Hall(Q, \Finite_q) \to \Complex$ is given by
     \[
@@ -366,7 +361,7 @@ However, we will compute some of the structure constants of~$\Hall(Q, \Finite_q)
 For this we follow \cite[Example~2.2]{schiffmann_hall}.
 
 
-\begin{example}
+\begin{example}[Structure constants]
   For any three partition~$\lambda, \mu, \kappa \in \Par$ we abbreviate
   \[
     C^{\kappa}_{\lambda, \mu}
@@ -395,73 +390,8 @@ For this we follow \cite[Example~2.2]{schiffmann_hall}.
         \qbinom{n+m}{m}_q \,.
       \end{align*}
       (See \cref{size of quantum grassmannian} for the last equality.)
-
-      We see in particular that~$C^{\kappa}_{\lambda, \mu}$ depends is a polynomial way on~$q$. 
-      We have for example
-      \[
-        C^{(1^{n+1})}_{(1^n),(1)}
-        =
-        \counting {\Gr(1, n+1, \Finite_q)}
-        = 
-        \counting {\Proj^n(\Finite_q)}
-        =
-        \frac{ q^{n+1} - 1 }{ q - 1 }
-        =
-        [n+1]_q
-        =
-        1 + q + \dotsb + q^n \,,
-      \]
-      and also
-      \begin{align*}
-        C^{(1^{n+2})}_{(1^n),(1,1)}
-        &=
-        \qbinom{n+2}{2}_q
-        =
-        \frac{[n+2]_q [n+1]_q}{[2]_q}
-        \\
-        &=
-        \frac{ (1 + q + \dotsb + q^n) (1 + q + \dotsb + q^{n+1}) }{ 1 + q }
-        \\
-        &=
-        \begin{cases*}
-          (1 + q + \dotsb + q^n) (1 + q^2 + \dotsb + q^n)
-          &
-          if~$n$ is even,
-          \\
-          (1 + q^2 + \dotsb + q^{n-1}) (1 + q + \dotsb + q^{n+1})
-          &
-          if~$n$ is odd.
-        \end{cases*}
-%        \\
-%        &=
-%        \begin{cases*}
-%          \begin{aligned}
-%            1 + q
-%            &+ 2 (q^2 + q^3)
-%            + \dotsb
-%            + \biggl( 1+\frac{n}{2} \biggr) q^n
-%            \\
-%            &+ \dotsb
-%            + 2 ( q^{2n-3} + q^{2n-2} )
-%            + q^{2n-1} + q^{2n}
-%          \end{aligned}
-%          &
-%          if~$n$ is even,
-%          \\[0.5em]
-%          \begin{aligned}
-%            1 + q
-%            &+ 2 ( q^2 + q^3 )
-%            + \dotsb
-%            + \biggl( 1+\frac{n+1}{2} \biggr) (q^{n-1} + q^n + q^{n+1})
-%            \\
-%            &+ \dotsb
-%            + 2 ( q^{2n-3} + q^{2n-2} )
-%            + q^{2n-1} + q^{2n}
-%          \end{aligned}
-%          &
-%          if~$n$ is odd.
-%        \end{cases*}
-      \end{align*}
+      We see in particular that~$C^{\kappa}_{\lambda, \mu}$ depends is a polynomial way on~$q$ (with natural coefficients). 
+      See \cref{examples of quantum binomial coefficients} for some explicit calculations of binomial coefficients.
     \item
       Let now~$\lambda = (n)$ and~$\mu = (m)$.
       We consider the partition~$\kappa = (n+m)$. 
@@ -503,13 +433,11 @@ We have seen in last week’s talk how to construct the Hall algebra of~$Q$ over
 
 \begin{recall}
   The Hall~algebra~$\Hall(Q, \Finite_1)$ is a graded, cocommutative Hopf algebra (over the ground field~$\Complex$).
-  Its structure is given as follows:
+  It is defined as follows:
   \begin{itemize}
     \item
       The underlying vector space of~$\Hall(Q, \Finite_1)$ is the free~\vectorspace{$\Complex$} on the set~$\Iso(Q, \Finite_1)$.
       The set~$\Iso(Q, \Finite_1)$ is indexed by the set of partitions~$\Par$.
-    \item
-      The grading of~$\Hall(Q, \Finite_1)$ is given by~$\deg( \class{M} ) = \dim(M)$.
     \item
       The multiplication of$~\Hall(Q, \Finite_1)$ is given by
       \[
@@ -530,6 +458,8 @@ We have seen in last week’s talk how to construct the Hall algebra of~$Q$ over
         \} \,.
       \]
       The multiplicative neutral element of~$\Hall(Q, \Finite_1)$ is given by~$1_{\Hall(Q, \Finite_1)} = \class{0}$.
+    \item
+      The grading of~$\Hall(Q, \Finite_1)$ is given by~$\deg( \class{M} ) = \dim(M)$.
     \item
       The comultiplication of~$\Hall(Q, \Finite_1)$ is given by
       \[
@@ -584,11 +514,13 @@ We have seen in last week’s talk how to construct the Hall algebra of~$Q$ over
         b \class{ \Nil_{i+j} } \,.
       \]
       We have seen above that~$b = C^{(i+j)}_{(i),(j)} = 1$.
-      The coffient~$a$ is the number of entries of~$(i,j)$ that are of length~$j$.
-      Thus
-      \[
+      The coeffient~$a$ is given by
+      \begin{align*}
         a
-        =
+        &=
+        \text{how often~$j$ occurs in~$(i,j)$}
+        \\
+        &=
         \begin{cases*}
           1
           &
@@ -598,7 +530,7 @@ We have seen in last week’s talk how to construct the Hall algebra of~$Q$ over
           &
           if~$i = j$.
         \end{cases*}
-      \]
+      \end{align*}
       Thus
       \[
         \class{\Nil_i} \cdot \class{\Nil_j}
@@ -648,13 +580,13 @@ We have seen in last week’s talk how to construct the Hall algebra of~$Q$ over
         +   \class{ \Nil_{(5, 3, 3, \overline{4}, 1)} }
         + 3 \class{ \Nil_{(5, 3, 3, 2, \overline{3})} } \,,
       \end{align*}
-      where the entry of interested is overlined.
+      where the entry of interest is overlined.
 
       It follows from the above formula by induction that~$\Hall(Q, \Finite_1)$ is generated as an algebra by the~$N_i$ with~$i \geq 1$.%
       \footnote{%
-        We have seen in last week’s talk that~$\Hall(Q, \Finite_1)$ is the universal enveloping algebra of its Lie algebra of primitive elements by the Milnor--Moore~theorem.
+        We have seen in last week’s talk that~$\Hall(Q, \Finite_1)$ is by the theorem of Milnor--Moore the universal enveloping algebra of its Lie algebra of primitive elements.
         We have also seen that this Lie algebra is spanned, as a vector space, by the isomorphism classes~$\Nil_i$ with~$i \geq 1$, as these are the indecomposable objects in~$\repnil(Q, \Finite_1)$.
-        It therefore also follows from last week’s talk that~$\Hall(Q, \Finite_1)$ is generated by the~$\Nil_i$ with~$i \geq 0$.
+        That the~$\Nil_i$ generate the Hall algebra~$\Hall(Q, \Finite_1)$ as an algebra does therefore also follow from last week’s talk.
       }
   \end{enumerate}
 \end{example}
@@ -662,11 +594,6 @@ We have seen in last week’s talk how to construct the Hall algebra of~$Q$ over
 \begin{corollary}
   The Hall algebra~$\Hall(Q, \Finite_1)$ is commutative.
 \end{corollary}
-
-\begin{remark}
-  We have seen last week that the Hall algebra~$\Hall(Q, \Finite_1)$ is the universal enveloping algebra of its Lie algebra of primitive elements, which in turn is spanned (as a vector space) by the~$\Nil_i$.
-  We have thus already seen last week that~$\Hall(Q, \Finite_1)$ is generated by the~$\Nil_i$ as an algebra.
-\end{remark}
 
 We have hence shown that~$\Hall(Q, \Finite_1)$ is a commutative, cocommutative, graded Hopf algebra
 We will in the following show that it is actually the ring of symmetric functions.
@@ -815,23 +742,7 @@ For any two symmetric functions~$f$,~$g$ we have by construction of~$\Lambda$ th
   These are the \defemph{power symmetric functions} and \defemph{completely homogeneous symmetric functions}.
 \end{example}
 
-
-\begin{warning}
-  \leavevmode
-  \begin{enumerate}
-    \item
-      The ring of symmetric functions~$\Lambda$ is \emph{not} the limit of~$\Lambda^{(n+1)} \to \Lambda^{(n)}$ for~$n \geq 0$ in the category of (commutative) algebras.
-    \item
-      The ring of symmetric functions~$\Lambda$ is \emph{not} isomorphic to the algebras of symmetric polynomials
-      \[
-        \Complex[x_1, x_2, x_3, \dotsc]^{\symm_{\Natural}}
-        \quad\text{or}\quad
-        \Complex[x_1, x_2, x_3, \dotsc]^{\symm_\infty}
-      \]
-      where~$\symm_\infty = \colim_{n \geq 0} (\symm_n \hookrightarrow \symm_{n+1})$.
-  \end{enumerate}
-  See \cref{wrong symmetric functions} for more details on this.
-\end{warning}
+See \cref{wrong symmetric functions} for some remarks about the definition of~$\Lambda$.
 
 
 
@@ -878,7 +789,7 @@ form a vector space basis for~$\Lambda^{(n)}$, and similarly for~$h^{(n)}_\lambd
 We can generalize these families of symmetric polynomials to symmetric functions:
 
 \begin{example}
-  For every~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ we consider the symmetric functions
+  For every partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ we consider the symmetric functions
   \[
     e_\lambda
     \defined
@@ -890,7 +801,7 @@ We can generalize these families of symmetric polynomials to symmetric functions
     \quad
     p_\lambda
     \defined
-    p_{\lambda_1} \dotsm p_{\lambda_l} \,.
+    p_{\lambda_1} \dotsm p_{\lambda_l}
   \]
   and note that
   \begin{align*}
@@ -909,28 +820,31 @@ We can generalize these families of symmetric polynomials to symmetric functions
   \end{align*}
 \end{example}
 
-Another important family of symmetric polynomials are the \defemph{monomial symmetric polynomials}:
-For every number of variables~$n \geq 0$ and partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ of length~$l = \length(\lambda) \leq n$ the corresponding monomial symmetric polynomial is given by
-\[
-  m^{(n)}_\lambda(x_1, \dotsc, x_n)
-  =
-  \sum \text{distinct permutations of~$x_1^{\lambda_1} \dotsm x_l^{\lambda_l}$} \,.
-\]
-These homogeneous polynomials also form a basis of~$\Lambda^{(n)}$.
-They too can be generalized to symmetric functions.
-
 \begin{example}
-  For every number of variables~$n \geq 0$ and any partition~$\lambda \in \Par$ of length~$\length(\lambda) > n$ we set
+  Another important family of symmetric polynomials are the \defemph{monomial symmetric polynomials}:
+
+  For every number of variables~$n \geq 0$ and partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ of length~$l \leq n$ the corresponding monomial symmetric polynomial is given by
   \[
-    m^{(n)}_\lambda \defined 0 \,.
+    m^{(n)}_\lambda(x_1, \dotsc, x_n)
+    \defined
+    \sum \text{distinct permutations of~$x_1^{\lambda_1} \dotsm x_l^{\lambda_l}$} \,.
   \]
-  Then
+  if~$n \geq l$, and by
+  \[
+    m^{(n)}_\lambda
+    \defined
+    0
+  \]
+  if~$n < l$.
+  The symmetric polynomials~$m^{(n)}_\lambda$ where~$\lambda$ is of length~$\length(\lambda) \leq n$ form a basis of~$\Lambda^{(n)}$.
+
+  We have
   \[
     m^{(n+1)}_\lambda(x_1, \dotsc, x_n, 0)
     =
     m^{(n)}_\lambda
   \]
-  for every~$n \geq 0$, and each~$m_\lambda^{(n)}$ is homogeneous of degree~$\size{\lambda}$.
+  for every number of variables~$n \geq 0$, and each~$m_\lambda^{(n)}$ is homogeneous of degree~$\size{\lambda}$.
   We therefore get a well-defined homogeneous symmetric function
   \[
     m_\lambda
@@ -984,33 +898,22 @@ The key observation behind this is the following:
 
 \begin{corollary}
   The elementary symmetric functions~$e_k$ with~$k \geq 1$ form an algebraically independent algebra generating set for~$\Lambda$, and similarly the~$h_k$ and the~$p_k$.
+  \qed
 \end{corollary}
 
 \begin{corollary}
   We have~$\Lambda \cong \Complex[X_1, X_2, X_3, \dotsc]$ as graded algebras, where each variable~$X_k$ is homogeneous of degree~$k$.
+  \qed
 \end{corollary}
 
-\begin{remark}
-  \leavevmode
-  \begin{enumerate}
-    \item
-      It follows from \cref{iso in each degree for sufficiently large} for any two symmetric functions~$f, g \in \Lambda$ that
-      \[
-        f = g
-        \iff
-        \text{$f(x_1, \dotsc, x_n) = g(x_1, \dotsc, x_n)$ for some~$n \geq \deg(f), \deg(g)$.}
-      \]
-    \item
-      We can regard~$\Lambda$ as a colimit of suitable inclusions~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ for~$n \geq 0$, see \cref{symmetric functions as colimit}.
-  \end{enumerate}
-\end{remark}
+See \cref{symmetric functions as colimit} for more consequences.
 
 
 
 \subsection{Hopf Algebra Structure}
 
 We can endow the algebra of symmetric functions~$\Lambda$ with the structure of a graded Hopf algebra.
-We have now for any two number of variables~$n, m \geq 0$ a homomorphism of graded algebras
+We have for any two number of variables~$n, m \geq 0$ a homomorphism of graded algebras
 \begin{align*}
   \Delta_{nm}
   \colon
@@ -1123,7 +1026,7 @@ We have shown altogether that~$\Phi$ is an isomorphism of graded Hopf algebras.
 
 \newpage
 \appendix
-\section{Appendices}
+\section{Remarks and Proofs}
 
 
 
@@ -1627,6 +1530,25 @@ If~$\Acat$ is an abelian category and~$\Bcat$ is an abelian, exact subcategory t
 \end{proof}
 
 
+
+\subsection{Proof of \cref{controlling ext}}
+\label{proof of controlling ext}
+
+\begin{enumerate}
+  \item
+    The indecomposable objects of~$\repnil(Q, \Finite_q)$ are precisely~$\Nil_i$ with~$i \geq 1$.
+    The representation~$\Nil_i$ has (up to isomorphism) the subrepresentations~$\Nil_j$ with~$j = 0, \dotsc, i$.
+    Thus only~$\Nil_1$ is simple.
+  \item
+    This follows from the previous assertion since~ each objects of~$\repnil(Q, \Finite_q)$ admits a composition series, whose composition factors are necessarily~$S$.
+  \item      
+    For the first assertion we note that~$\Hom(S, S) = \Finite_q$ because~$S$ is one-dimensional.      
+    For the computation of~$\Ext^1(S,S)$ see \cref{computing ext}.
+  \qedhere
+\end{enumerate}
+
+
+
 \subsection{Computing~$\Ext^1(S,S)$}
 \label{computing ext}
 
@@ -1990,6 +1912,238 @@ This proves the assertion.
 
 
 
+\subsection{Explicit Computations of Quantum Binomial Coefficients}
+\label{examples of quantum binomial coefficients}
+
+We have
+\[
+  C^{(1^{n+1})}_{(1^n),(1)}
+  =
+  \counting {\Gr(1, n+1, \Finite_q)}
+  = 
+  \counting {\Proj^n(\Finite_q)}
+  =
+  \frac{ q^{n+1} - 1 }{ q - 1 }
+  =
+  [n+1]_q
+  =
+  1 + q + \dotsb + q^n \,,
+\]
+and also
+\begin{align*}
+  C^{(1^{n+2})}_{(1^n),(1,1)}
+  &=
+  \qbinom{n+2}{2}_q
+  =
+  \frac{[n+2]_q \, [n+1]_q}{[2]_q}
+  \\
+  &=
+  \frac{ (1 + q + \dotsb + q^n) (1 + q + \dotsb + q^{n+1}) }{ 1 + q }
+  \\
+  &=
+  \begin{cases*}
+    (1 + q + \dotsb + q^n) (1 + q^2 + \dotsb + q^n)
+    &
+    if~$n$ is even,
+    \\
+    (1 + q^2 + \dotsb + q^{n-1}) (1 + q + \dotsb + q^{n+1})
+    &
+    if~$n$ is odd.
+  \end{cases*}
+%  \\
+%  &=
+%  \begin{cases*}
+%    \begin{aligned}
+%      1 + q
+%      &+ 2 (q^2 + q^3)
+%      + \dotsb
+%      + \biggl( 1+\frac{n}{2} \biggr) q^n
+%      \\
+%      &+ \dotsb
+%      + 2 ( q^{2n-3} + q^{2n-2} )
+%      + q^{2n-1} + q^{2n}
+%    \end{aligned}
+%    &
+%    if~$n$ is even,
+%    \\[0.5em]
+%    \begin{aligned}
+%      1 + q
+%      &+ 2 ( q^2 + q^3 )
+%      + \dotsb
+%      + \biggl( 1+\frac{n+1}{2} \biggr) (q^{n-1} + q^n + q^{n+1})
+%      \\
+%      &+ \dotsb
+%      + 2 ( q^{2n-3} + q^{2n-2} )
+%      + q^{2n-1} + q^{2n}
+%    \end{aligned}
+%    &
+%    if~$n$ is odd.
+%  \end{cases*}
+\end{align*}
+
+Lastly we compute
+\begin{align*}
+  \qbinom{n+3}{3}_q
+  =
+  \frac{ \qnum{n+3}_q \, \qnum{n+2}_q \, \qnum{n+1}_q }{ \qnum{3}_q \, \qnum{2}_q \, \qnum{1}_q }
+  &=
+  \frac{
+    \frac{q^{n+3} - 1}{q - 1} \, \frac{q^{n+2} - 1}{q - 1} \, \frac{q^{n+1} - 1}{q - 1}
+  }{
+    \frac{q^3 - 1}{q - 1} \, \frac{q^2 - 1}{q - 1} \, \frac{q - 1}{q - 1}
+  }
+  \\[0.6em]
+  &=
+  \frac{ (q^{n+3} - 1) (q^{n+2} - 1) (q^{n+1} - 1) }{ (q^3 - 1) (q^2 - 1) (q - 1) }
+\end{align*}
+We recall that the polynomial~$x^k - 1$ divides the polynomial~$x^l - 1$ (in~$\Integer[x]$) if and only if the integer~$k$ divides the integer~$l$.
+Then
+\[
+  \frac{x^k - 1}{x^l - 1}
+  =
+  1 + x^l + x^{2l} + \dotsb + x^{k-l} \,.
+\]
+We can therefore compute the above quotient by distinguishing between six cases, depending on how the powers
+\[
+  n + 3 \,,
+  \quad
+  n + 2 \,,
+  \quad
+  n + 1
+\]
+are divisible by~$3$ and~$2$.
+This in turn is uniquely determined by the residue class of~$n$ modulo~$6$.
+\begin{enumerate}[label = {Case \arabic*.}]
+  \item
+    Suppose that~$n \equiv 0$.
+    Then~$n+3$ is divisible by~$3$ and~$n+2$ is divisible by~$2$.
+    In this case
+    \begin{align*}
+      \qbinom{n+3}{3}_q
+      &=
+      \frac{ q^{n+3} - 1 }{ q^3 - 1 }
+      \cdot
+      \frac{ q^{n+2} - 1 }{ q^2 - 1 }
+      \cdot
+      \frac{ q^{n+1} - 1 }{ q - 1 }
+      \\
+      &=
+      (1 + q^3 + \dotsb + q^n) (1 + q^2 + \dotsb + q^n) (1 + q + \dotsb + q^n) \,.
+    \end{align*}
+  \item
+    Suppose that~$n \equiv 1$.
+    Then~$n+2$ is divisible by~$3$ and~$n+3$ is divisible by$~2$.
+    In this case
+    \begin{align*}
+      \qbinom{n+3}{3}_q
+      &=
+      \frac{ q^{n+2} - 1 }{ q^3 - 1 }
+      \cdot
+      \frac{ q^{n+3} - 1 }{ q^2 - 1 }
+      \cdot
+      \frac{ q^{n+1} - 1 }{ q - 1 }
+      \\
+      &=
+      (1 + q^3 + \dotsb + q^{n-1}) (1 + q^2 + \dotsb + q^{n+1}) (1 + q + \dotsb + q^n) \,.
+    \end{align*}
+  \item
+    Suppose that~$n \equiv 2$.
+    Then~$n+1$ is divisible by~$3$ and~$n+2$ is divisible by~$2$.
+    In this case
+    \begin{align*}
+      \qbinom{n+3}{3}_q
+      &=
+      \frac{ q^{n+1} - 1 }{ q^3 - 1 }
+      \cdot
+      \frac{ q^{n+2} - 1 }{ q^2 - 1 }
+      \cdot
+      \frac{ q^{n+3} - 1 }{ q - 1 }
+      \\
+      &=
+      (1 + q^3 + \dotsb + q^{n-2}) (1 + q^2 + \dotsb + q^n) (1 + q + \dotsb + q^{n+2}) \,.
+    \end{align*}
+  \item
+    Suppose that~$n \equiv 3$.
+    Then~$n+3$ is divisible by~$3$ and~$n+1$ is divisible by~$2$.
+    In this case
+    \begin{align*}
+      \qbinom{n+3}{3}_q
+      &=
+      \frac{ q^{n+3} - 1 }{ q^3 - 1 }
+      \cdot
+      \frac{ q^{n+1} - 1 }{ q^2 - 1 }
+      \cdot
+      \frac{ q^{n+2} - 1 }{ q - 1 }
+      \\
+      &=
+      (1 + q^3 + \dotsb + q^n) (1 + q^2 + \dotsb + q^{n-1}) (1 + q + \dotsb + q^{n+1}) \,.
+    \end{align*}
+  \item
+    Suppose that~$n \equiv 4$.
+    Then~$n+2$ is divisible by both~$3$ and~$2$.
+    We observe that
+    \[
+      \frac{1 + q^3}{1 + q}
+      =
+      1 - q + q^2
+    \]
+    and hence for every odd positive integer~$m$ that
+    \begin{align*}
+      \frac{1 + q^3 + \dotsb + q^{3m}}{1 + q}
+      &=
+      \frac{(1 + q^3) + q^6 (1 + q^3) + \dotsb + q^{3m-3} (1 + q^3)}{1 + q}
+      \\
+      &=
+      (1 - q + q^2) (1 + q^6 + \dotsb + q^{3m-3}) \,.
+    \end{align*}
+    We also observe that the integer~$n-1$ is divisible by~$3$, and that it is an odd multiple of~$3$ because~$n+2$ is divisible by~$6$ and therefore
+    \[
+      \frac{n-1}{3} + 1
+      =
+      \frac{n+2}{3}
+    \]
+    is even.
+    We now find that
+    \begin{align*}
+      \qbinom{n+3}{3}_q
+      &=
+      \frac{ q^{n+3} - 1 }{ q - 1 }
+      \cdot
+      \frac{ q^{n+2} - 1 }{ (q^3 - 1)(q + 1) }
+      \cdot
+      \frac{ q^{n+1} - 1 }{ q - 1 }
+      \\
+      &=
+      \frac{ q^{n+3} - 1 }{ q - 1 }
+      \cdot
+      \frac{ 1 + q^3 + \dotsb + q^{n-1} }{ q + 1 }
+      \cdot
+      \frac{ q^{n+1} - 1 }{ q - 1 }
+      \\
+      &=
+      (1 + q + \dotsb + q^{n+2})
+      (1 - q + q^2)(1 + q^6 + \dotsb + q^{n-4})
+      (1 + q + \dotsb + q^n) \,.
+    \end{align*}
+  \item
+    Suppose that~$n \equiv 5$.
+    Then~$n+1$ is divisible by~$3$ and~$n+3$ is divisible by~$2$.
+    In this case
+    \begin{align*}
+      \qbinom{n+3}{3}_q
+      &=
+      \frac{ q^{n+1} - 1 }{ q^3 - 1 }
+      \cdot
+      \frac{ q^{n+3} - 1 }{ q^2 - 1 }
+      \cdot
+      \frac{ q^{n+2} - 1 }{ q - 1 }
+      \\
+      &=
+      (1 + q^3 + \dotsb + q^{n-2}) (1 + q^2 + \dotsb + q^{n+1}) (1 + q + \dotsb + q^{n+1}) \,.
+    \end{align*}
+\end{enumerate}
+
+
 \subsection{Computing more Structure Constants for~$\Hall(Q, \Finite_q)$}
 \label{computing more structure constants}
 
@@ -2021,7 +2175,7 @@ See \cref{basis for n 1}.
       \node at (2, 1) (D1) {$f_m$};
       \draw[thick] (D1) -- (Z);
     \end{tikzpicture}
-    \caption{The representations~$\Nil_{(n,1)}$ over~$\Finite_q$.}
+    \caption{The representations~$\Nil_{(n, 1^m)}$.}
   \label{basis for n 1}
 \end{figure}
 
@@ -2161,33 +2315,53 @@ We hence find that
 \subsection{More on Symmetric Functions}
 \label{wrong symmetric functions}
 
-For the first claim consider the symmetric polyonmials
-\[
-  f^{ (n) }(x_1, \dotsc, x_n)
-  \defined
-  x_1 + x_1 x_2 + \dotsb + x_1 \dotsm x_n \,.
-\]
-The polynomials satisfy the compatibility condition
-\[
-  f^{(n+1)}(x_1, \dotsc, x_n, 0)
-  =
-  f^{(n)}
-\]
-for every number of variables~$n \geq 0$.
-But there exists no symmetric function~$f \in \Lambda$ with
-\[
-  f(x_1, \dotsc, x_n) = f^{(n)}(x_1, \dotsc, x_n)
-\]
-for every~$n \geq 0$ since otherwise
-\[
-  n
-  =
-  \deg(f^{(n)})
-  \leq
-  \deg(f)
-\]
-for every~$n \geq 0$, which is not possible.
-This shows that~$\Lambda$ together with the homomorphisms~$\Lambda \to \Lambda^{(n)}$ is not the limit of the homomorphisms~$\Lambda^{(n+1)} \to \Lambda^{(n)}$ for~$n \geq 0$ in the category of rings.
+\begin{warning}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      The ring of symmetric functions~$\Lambda$ is \emph{not} the limit of~$\Lambda^{(n+1)} \to \Lambda^{(n)}$ for~$n \geq 0$ in the category of (commutative) algebras.
+
+      We consider for this the symmetric polyonmials
+      \[
+        f^{ (n) }(x_1, \dotsc, x_n)
+        \defined
+        x_1 + x_1 x_2 + \dotsb + x_1 \dotsm x_n \,.
+      \]
+      The polynomials satisfy the compatibility condition
+      \[
+        f^{(n+1)}(x_1, \dotsc, x_n, 0)
+        =
+        f^{(n)}
+      \]
+      for every number of variables~$n \geq 0$.
+      But there exists no symmetric function~$f \in \Lambda$ with
+      \[
+        f(x_1, \dotsc, x_n) = f^{(n)}(x_1, \dotsc, x_n)
+      \]
+      for every~$n \geq 0$ since otherwise
+      \[
+        n
+        =
+        \deg(f^{(n)})
+        \leq
+        \deg(f)
+      \]
+      for every~$n \geq 0$, which is not possible.
+      This shows that~$\Lambda$ together with the homomorphisms~$\Lambda \to \Lambda^{(n)}$ is not the limit of the homomorphisms~$\Lambda^{(n+1)} \to \Lambda^{(n)}$ for~$n \geq 0$ in the category of rings.
+    \item
+      The ring of symmetric functions~$\Lambda$ is \emph{not} isomorphic to the algebras of symmetric polynomials
+      \[
+        \Complex[x_1, x_2, x_3, \dotsc]^{\symm_{\Natural}}
+        \quad\text{or}\quad
+        \Complex[x_1, x_2, x_3, \dotsc]^{\symm_\infty}
+      \]
+      where~$\symm_\infty = \colim_{n \geq 0} (\symm_n \hookrightarrow \symm_{n+1})$.
+
+      Indeed, we observe that both~$\Complex[x_1, x_2, x_3, \dotsc]^{\symm_{\Natural}}$ and~$\Complex[x_1, x_2, x_3, \dotsc]^{\symm_\infty}$ are just the ground field~$\Complex$:
+      If a symmetric polynomial~$f \in \Complex[x_1, x_2, \dotsc]$ were to contain a nontrivial monomial then it must also contain all permutations of this monomial.
+      But there are infinitely many such permutations, while~$f$ contains only finitely many polynomials.
+  \end{enumerate}
+\end{warning}
 
 Suppose that more generally~$( f^{(n)} )_{n \geq 0}$ is any sequence of symmetric polynomials~$f^{(n)} \in \Lambda^{(n)}$ that are compatible in the sense that~$f(x_1, \dotsc, x_n) = f^{(n)}(x_1, \dotsc, x_n)$ for every~$n \geq 0$.
 Then the~$f^{(n)}$ define a symmetric function~$f \in \Lambda$ with~$f^{(n)}(x_1, \dotsc, x_n) = f(x_1, \dotsc, x_n)$ for every~$n \geq 0$ if and only if the degrees~$\deg( f^{(n)} )$ are bounded, i.e.\ if and only if there exists some~$K \geq 0$ with~$\deg( f^{(N)} ) \leq K$ for every~$n \geq 0$.
@@ -2197,56 +2371,68 @@ If on the other hand such a bound~$K$ exists then we consider for every~$k = 0, 
 That the symmetric polynomials~$f^{(n)}$ are compatible means that for every degree~$k = 0, \dotsc, K$ the homogeneous symmetric polynomials~$f^{(n)}_k$ are compatible.
 Thus there exists for every degree~$k = 0, \dotsc, K$ a homogeneous symmetric function~$f_k \in \Lambda_k$ with
 \[
-  f_k(x_1, \dots, x_n)
-  =
-  f^{(n)}_k(x_1, \dotsc, x_n)
+f_k(x_1, \dots, x_n)
+=
+f^{(n)}_k(x_1, \dotsc, x_n)
 \]
 for every number of variables~$n \geq 0$.
 It then follows for the symmetric function
 \[
-  f
-  \defined
-  f_0 + f_1 + \dotsb + f_K
+f
+\defined
+f_0 + f_1 + \dotsb + f_K
 \]
 in each degree~$l = 0, \dotsc, K$ that
 \[
-  f(x_1, \dotsc, x_n)_l
-  =
-  f_0(x_1, \dotsc, x_n)_k
-  +
-  \dotsb
-  +
-  f_k(x_1, \dotsc, x_n)_l
-  =
-  f_l(x_1, \dotsc, x_n)
-  =
-  f^{(n)}_l(x_1, \dotsc, x_n)
+f(x_1, \dotsc, x_n)_l
+=
+f_0(x_1, \dotsc, x_n)_k
++
+\dotsb
++
+f_k(x_1, \dotsc, x_n)_l
+=
+f_l(x_1, \dotsc, x_n)
+=
+f^{(n)}_l(x_1, \dotsc, x_n)
 \]
 for every~$n \geq 0$ since each~$f_l(x_1, \dotsc, x_n)$ is homogeneous of degree~$l$.
 This shows that
 \[
-  f(x_1, \dotsc, x_n)
-  =
-  f^{(n)}(x_1, \dotsc, x_n)
+f(x_1, \dotsc, x_n)
+=
+f^{(n)}(x_1, \dotsc, x_n)
 \]
 for every number of variables~$n \geq 0$.
 
-To see the second claim we note that both~$\Complex[x_1, x_2, x_3, \dotsc]^{\symm_{\Natural}}$ and~$\Complex[x_1, x_2, x_3, \dotsc]^{\symm_\infty}$ are just~$\Complex$.
-Indeed, if a symmetric polynomial~$f \in \Complex[x_1, x_2, \dotsc]$ were to contain a nontrivial monomial then it must also contain all permutations of this monomial.
-But there are infinitely many such permutations, while~$f$ contains only finitely many polynomials.
 
 
 \subsection{Regarding~$\Lambda$ as a Colimit}
 \label{symmetric functions as colimit}
 
-We have for every number of variables~$n \geq 0$ an injective homomorphism of graded algebras~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ that is given on algebra generators by~$e^{(n)}_k \to e^{(n+1)}_k$ for every~$k = 0, \dotsc, n$.
-This is a right sided inverse for the homomorphism~$\Lambda^{(n+1)} \to \Lambda^{(n)}$.
-In this way a symmetric polynomial in~$n$~variables can be extended to a symmetric polynomial in~$n+1$~variables.
+\begin{remark}
+  \leavevmode
+  \begin{enumerate}
+    \item
+      It follows from \cref{iso in each degree for sufficiently large} for any two symmetric functions~$f, g \in \Lambda$ that
+      \[
+        f = g
+        \iff
+        \text{$f(x_1, \dotsc, x_n) = g(x_1, \dotsc, x_n)$ for some~$n \geq \deg(f), \deg(g)$.}
+      \]
+    \item
+      We can regard~$\Lambda$ as a colimit of suitable inclusions~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ for~$n \geq 0$:
 
-We similarly have for every number of variables~$n \geq 0$ a homomorphism of graded algebras~$\Lambda^{(n)} \to \Lambda$ that is given on algebra generators by~$e^{(n)}_k \to e_k$ for every~$k = 0, \dotsc, k$.
+      We have for every number of variables~$n \geq 0$ an injective homomorphism of graded algebras~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ that is given on algebra generators by~$e^{(n)}_k \to e^{(n+1)}_k$ for every~$k = 0, \dotsc, n$.
+      This is a right sided inverse for the homomorphism~$\Lambda^{(n+1)} \to \Lambda^{(n)}$.
+      In this way a symmetric polynomial in~$n$~variables can be extended to a symmetric polynomial in~$n+1$~variables.
 
-We now find that~$\Lambda$ together with the homomorphisms~$\Lambda^{(n)} \to \Lambda$ is a colimit of the homomorphisms~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ for~$n \geq 0$.
-In this way we can regard~$\Lambda$ as a sort of increasing union of the algebras of symmetric polynomials.
+      We similarly have for every number of variables~$n \geq 0$ a homomorphism of graded algebras~$\Lambda^{(n)} \to \Lambda$ that is given on algebra generators by~$e^{(n)}_k \to e_k$ for every~$k = 0, \dotsc, k$.
+
+      We now find that~$\Lambda$ together with the homomorphisms~$\Lambda^{(n)} \to \Lambda$ is a colimit of the homomorphisms~$\Lambda^{(n)} \to \Lambda^{(n+1)}$ for~$n \geq 0$.
+      In this way we can regard~$\Lambda$ as a sort of increasing union of the algebras of symmetric polynomials.
+  \end{enumerate}
+\end{remark}
 
 
 
@@ -2265,7 +2451,7 @@ In this way we can regard~$\Lambda$ as a sort of increasing union of the algebra
 \end{lemma}
 
 \begin{proof}
-  The inclusion~$V^G \tensor W^H \subseteq (V \tensor W)^{G \times H)}$ can be checked on simple tensors.
+  The inclusion~$V^G \tensor W^H \subseteq (V \tensor W)^{G \times H}$ can be checked on simple tensors.
   Let on the other hand~$x \in (V \tensor W)^{G \times H}$.
   We may choose a basis~$(v_i)_{i \in I}$ of~$V$ and write~$x = \sum_{i \in I} v_i \tensor w_i$ for some unique vectors~$w_i \in W$.
   For every element~$h \in H$ we then have
