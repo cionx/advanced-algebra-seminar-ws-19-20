@@ -264,19 +264,19 @@ The multiplication of~$\Hall(Q, \Finite_q)$ is given by
 \[
   \class{\Nil_\lambda} \cdot \class{\Nil_\mu}
   =
-  \sum_{\kappa \in \Par}
-  C^\kappa_{\lambda, \mu} \class{\Nil_\kappa}
+  \sum_{\nu \in \Par}
+  F^\nu_{\lambda, \mu} \class{\Nil_\nu}
 \]
-where the structure constants~$C^\kappa_{\lambda, \mu}$ are given by
+where the structure constants~$F^\nu_{\lambda, \mu}$ are given by
 \[
-  C^\kappa_{\lambda, \mu}
+  F^\nu_{\lambda, \mu}
   =
   \counting
   \{
-    \text{subrepresentation~$L$ of~$\Nil_\kappa$}
+    \text{subrepresentation~$L$ of~$\Nil_\nu$}
   \suchthat
     L \cong \Nil_\mu,
-    \Nil_\kappa/L \cong \Nil_\lambda
+    \Nil_\nu/L \cong \Nil_\lambda
   \} \,.
 \]
 We will now compute some of the structure constants, following \cite[Example~2.2]{schiffmann_hall}.
@@ -286,14 +286,14 @@ We will now compute some of the structure constants, following \cite[Example~2.2
   \begin{enumerate}
     \item
       Let~$\lambda = (1^n)$ and~$\mu = (1^m)$.
-      We consider the partition~$\kappa \defined (1^{n+m})$.
-      The action of the edge of the Jordan quiver~$Q$ on the representations~$\Nil_\lambda$,~$\Nil_\mu$ and~$\Nil_\kappa$ is trivial.
-      We thus find that every~\dimensional{$m$} linear subspace~$L$ of~$\Nil_{\kappa}$ satisfies the conditions~$L \cong \Nil_\mu$ and~$\Nil_\kappa / L \cong \Nil_\lambda$.
-      The structure constant~$C^{\kappa}_{\lambda, \mu}$ is therefore given by
+      We consider the partition~$\nu \defined (1^{n+m})$.
+      The action of the edge of the Jordan quiver~$Q$ on the representations~$\Nil_\lambda$,~$\Nil_\mu$ and~$\Nil_\nu$ is trivial.
+      We thus find that every~\dimensional{$m$} linear subspace~$L$ of~$\Nil_{\nu}$ satisfies the conditions~$L \cong \Nil_\mu$ and~$\Nil_\nu / L \cong \Nil_\lambda$.
+      The structure constant~$F^{\nu}_{\lambda, \mu}$ is therefore given by
       \begin{align*}
-        C^{\kappa}_{\lambda, \mu}
+        F^{\nu}_{\lambda, \mu}
         &=
-        \text{number of~\dimensional{$m$} linear subspaces of~$\Nil_{\kappa}$}
+        \text{number of~\dimensional{$m$} linear subspaces of~$\Nil_{\nu}$}
         \\
 %        &=
 %        \text{number of~\dimensional{$m$} linear subspaces of~$\Finite_q^{n+m}$}
@@ -305,36 +305,36 @@ We will now compute some of the structure constants, following \cite[Example~2.2
         \qbinom{n+m}{m}_q \,.
       \end{align*}
       (See \cref{size of quantum grassmannian} for the last equality.)
-      We see in particular that~$C^{\kappa}_{\lambda, \mu}$ depends is a polynomial way on~$q$ (with natural coefficients). 
+      We see in particular that~$F^{\nu}_{\lambda, \mu}$ depends is a polynomial way on~$q$ (with natural coefficients). 
       See \cref{examples of quantum binomial coefficients} for some explicit calculations of binomial coefficients.
     \item
       Let now~$\lambda = (n)$ and~$\mu = (m)$.
-      We consider the partition~$\kappa = (n+m)$. 
-      The representation$~\Nil_{\kappa}$ has the standard basis~$e_1, \dotsc, e_{n+m}$, and the subrepresentations of~$\Nil_{\kappa}$ are given by~$\gen{e_1, \dotsc, e_i}$ for~$i = 0, \dotsc, n+m$.
-      The subrepresentations~$L \defined \gen{e_1, \dotsc, e_m}$ is the unique one that is isomorphic to~$\Nil_\mu$, and its quotient~$\Nil_\kappa / L$ is isomorphic to~$\Nil_\lambda$.
+      We consider the partition~$\nu = (n+m)$. 
+      The representation$~\Nil_{\nu}$ has the standard basis~$e_1, \dotsc, e_{n+m}$, and the subrepresentations of~$\Nil_{\nu}$ are given by~$\gen{e_1, \dotsc, e_i}$ for~$i = 0, \dotsc, n+m$.
+      The subrepresentations~$L \defined \gen{e_1, \dotsc, e_m}$ is the unique one that is isomorphic to~$\Nil_\mu$, and its quotient~$\Nil_\nu / L$ is isomorphic to~$\Nil_\lambda$.
       Thus
       \[
-        C^{(n+m)}_{(n),(m)}
+        F^{(n+m)}_{(n),(m)}
         =
         1 \,.
       \]
     \item
       One finds for all~$n \geq 2$ and~$m \geq 1$ that
       \[
-        C^{(n, 1^m)}_{(n), (1^m)}
+        F^{(n, 1^m)}_{(n), (1^m)}
         =
         q^m
         =
-        C^{(n, 1^m)}_{(1^m), (n)} \,,
+        F^{(n, 1^m)}_{(1^m), (n)} \,,
       \]
       see \cref{computing more structure constants}.
   \end{enumerate}
-  We observe that in the above examples the coefficient~$C^{\kappa}_{\lambda, \mu}$ are always polynomials in~$q$ with integer coefficients.
-  We will see in next week’s talk that this is true for any coefficient~$C^{\kappa}_{\lambda, \mu}$.
+  We observe that in the above examples the coefficient~$F^{\nu}_{\lambda, \mu}$ are always polynomials in~$q$ with integer coefficients.
+  We will see in next week’s talk that this is true for any coefficient~$F^{\nu}_{\lambda, \mu}$.
   This will allow us to define the \defemph{generic Hall algebra} of the Jordan quiver.
 
-  We also have~$C^{\kappa}_{\lambda, \mu} = C^{\kappa}_{\mu, \lambda}$ in each example.
-  We will see in next week’s talk that the Hall algebra~$\Hall(Q, \Finite_q)$ is indeed commutative, which means precisely that~$C^\kappa_{\lambda, \mu} = C^\kappa_{\mu, \lambda}$ for any three partitions~$\lambda, \mu, \kappa \in \Par$.
+  We also have~$F^{\nu}_{\lambda, \mu} = F^{\nu}_{\mu, \lambda}$ in each example.
+  We will see in next week’s talk that the Hall algebra~$\Hall(Q, \Finite_q)$ is indeed commutative, which means precisely that~$F^\nu_{\lambda, \mu} = F^\nu_{\mu, \lambda}$ for any three partitions~$\lambda, \mu, \nu \in \Par$.
 \end{example}
 
 
@@ -359,13 +359,13 @@ A more explicit proof of \cref{hall algebra generators} can be found in \cref{in
 
 \begin{example}[Structure constants]
   \label{computing multiplication over F1}
-  We can again compute some structure constants~$C^\kappa_{\lambda, \mu}$.
+  We can again compute some structure constants~$F^\nu_{\lambda, \mu}$.
   \begin{enumerate}
     \item
-      Let again~$\lambda = (1^n)$ and~$\mu = (1^m)$, and consider~$\kappa = (1^{n+m})$.
+      Let again~$\lambda = (1^n)$ and~$\mu = (1^m)$, and consider~$\nu = (1^{n+m})$.
       We find as before that
       \[
-        C^{\kappa}_{\lambda, \mu}
+        F^{\nu}_{\lambda, \mu}
         =
         \text{number of~\dimensional{$m$} subspaces of~$\Nil_{n+m}$}
         =
@@ -373,10 +373,10 @@ A more explicit proof of \cref{hall algebra generators} can be found in \cref{in
       \]
 %      This is the same result as before by taking the limit~$q \to 1$.
     \item
-      Let again~$\lambda = (n)$ and~$\mu = (m)$ and consider~$\kappa = (n+m)$.
+      Let again~$\lambda = (n)$ and~$\mu = (m)$ and consider~$\nu = (n+m)$.
       We find as before that
       \[
-        C^{\kappa}_{\lambda, \mu} = 1 \,.
+        F^{\nu}_{\lambda, \mu} = 1 \,.
       \]
     \item
       Let us compute the product~$\class{\Nil_i} \cdot \class{\Nil_j}$.
@@ -392,8 +392,8 @@ A more explicit proof of \cref{hall algebra generators} can be found in \cref{in
         +
         b \class{ \Nil_{i+j} } \,.
       \]
-      We have seen above that~$b = C^{(i+j)}_{(i),(j)} = 1$.
-      The coeffient~$a = C^{(i,j)}_{(i),(j)}$ is given by
+      We have seen above that~$b = F^{(i+j)}_{(i),(j)} = 1$.
+      The coeffient~$a = F^{(i,j)}_{(i),(j)}$ is given by
       \begin{align*}
         a
         &=
@@ -411,7 +411,8 @@ A more explicit proof of \cref{hall algebra generators} can be found in \cref{in
         \end{cases*}
       \end{align*}
       Thus
-      \[
+      \begin{equation}
+        \label{computing product of two generators for representations}
         \class{\Nil_i} \cdot \class{\Nil_j}
         =
         \begin{cases*}
@@ -423,7 +424,7 @@ A more explicit proof of \cref{hall algebra generators} can be found in \cref{in
           &
           if~$i = j$.
         \end{cases*}
-      \]
+      \end{equation}
       We see in particular that~$\class{\Nil_i}$ and~$\class{\Nil_j}$ commute.
   \end{enumerate}
 \end{example}
@@ -542,12 +543,8 @@ We have for every number of variables~$n \geq 0$ a homomorphism of graded algebr
 \]
 that is given in each degree by projection onto the~\howmanyth{$n$} component.%
 \footnote{%
-  For any two symmetric functions~$f$,~$g$ we have by construction of~$\Lambda$ that
-  \[
-    f = g
-    \iff
-    \text{$f(x_1, \dotsc, x_n) = g(x_1, \dotsc, x_n)$ for every~$n \geq 0$.}
-  \]
+  For any two symmetric functions~$f, g \in \Lambda$ we have by construction of the algebra~$\Lambda$ that~$f = g$ if and only if~$f(x_1, \dotsc, x_n) = g(x_1, \dotsc, x_n)$ for every number of variables~$n \geq 0$.
+  It also sufficies that this equality holds for all sufficiently large~$n$, i.e.\ if there exists some~$N$ such that this equality holds for all~$n \geq N$.
 }
 
 \begin{example}
@@ -676,40 +673,6 @@ We can generalize these families of symmetric polynomials to symmetric functions
   \end{align*}
 \end{example}
 
-%\begin{example}
-%  Another important family of symmetric polynomials are the \defemph{monomial symmetric polynomials}:
-%
-%  For every number of variables~$n \geq 0$ and partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ of length~$l \leq n$ the corresponding monomial symmetric polynomial is given by
-%  \[
-%    m^{(n)}_\lambda(x_1, \dotsc, x_n)
-%    \defined
-%    \sum \text{distinct permutations of~$x_1^{\lambda_1} \dotsm x_l^{\lambda_l}$} \,.
-%  \]
-%  if~$n \geq l$, and by
-%  \[
-%    m^{(n)}_\lambda
-%    \defined
-%    0
-%  \]
-%  if~$n < l$.
-%  The symmetric polynomials~$m^{(n)}_\lambda$ where~$\lambda$ is of length~$\length(\lambda) \leq n$ form a basis of~$\Lambda^{(n)}$.
-%
-%  We have
-%  \[
-%    m^{(n+1)}_\lambda(x_1, \dotsc, x_n, 0)
-%    =
-%    m^{(n)}_\lambda
-%  \]
-%  for every number of variables~$n \geq 0$, and each~$m_\lambda^{(n)}$ is homogeneous of degree~$\size{\lambda}$.
-%  We therefore get a well-defined homogeneous symmetric function
-%  \[
-%    m_\lambda
-%    \in
-%    \Lambda_{\size{\lambda}} \,,
-%  \]
-%  which we call the \defemph{monomial symmetric function} associated to~$\lambda$.
-%\end{example}
-
 We now want to generalize the fundamental theorem on symmetric polynomials to symmetric functions.
 The key observation behind this is the following:
 
@@ -738,6 +701,7 @@ The key observation behind this is the following:
 \end{corollary}
 
 \begin{corollary}
+  \label{bases for symmetric functions}
   The following families of symmetric functions form vector space bases of~$\Lambda$:
   \begin{enumerate}
     \item
@@ -746,8 +710,6 @@ The key observation behind this is the following:
       The complete homogeneous symmetric polynomials~$h_\lambda$ with~$\lambda \in \Par$.
     \item
       The power symmetric polynomials~$p_\lambda$ with~$\lambda \in \Par$.
-%    \item
-%      The monomial symmetric polynomials~$m_\lambda$ with~$\lambda \in \Par$.
     \qed
   \end{enumerate}
 \end{corollary}
@@ -854,6 +816,7 @@ It has a basis indexed by partitions, and its graded parts have the dimension
 
 
 \section{The Isomorphism~$\Hall(Q, \Finite_1) \cong \Lambda$}
+\label{the isomorphism}
 
 Both~$\Hall(Q, \Finite_1)$ and~$\Lambda$ are commutative, cocommutate, graded Hopf algebras.
 They are isomorphic as graded Hopf Algebras:
@@ -874,7 +837,54 @@ This holds since~$p_k$ is primitive in~$\Lambda$ and~$\class{ \Nil_k }$ is primi
 
 We have shown altogether that~$\Phi$ is an isomorphism of graded Hopf algebras.
 
-% TODO: What corresponds to N_\lambda?
+\begin{remark}
+  For every partition~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ one can generalize the monomial symmetric polynomials
+  \[
+    m^{(n)}_\lambda(x_1, \dotsc, x_n)
+    =
+    \sum \text{distinct permutations of~$x_1^{\lambda_1} \dotsm x_l^{\lambda_l}$}
+  \]
+  to symmetric functions~$m_\lambda$.
+  See \cref{monomial symmetric functions} for more details.
+
+  One has~$m_{(k)} = p_k$ for every~$k \geq 1$, and therefore
+  \[
+    \Phi( m_{(k)} )
+    =
+    \Phi(p_k)
+    =
+    \class{ \Nil_k } \,.
+  \]
+  One can check (by hand) that
+  \[
+    m_{(i)} \cdot m_{(j)}
+    =
+    \begin{cases*}
+      m_{(i,j)} + m_{(i+j)}
+      &
+      if~$i \neq j$,
+      \\
+      2 m_{(i,j)} + m_{(i+j)}
+      &
+      if~$i = j$.
+    \end{cases*}
+  \]
+  It then follows together with~\eqref{computing product of two generators for representations} from \cref{computing multiplication over F1} that
+  \[
+    \Phi( m_{(i,j)} )
+    =
+    \class{ \Nil_{(i,j)} }
+  \]
+  for any partition~$(i,j)$.
+  It can be shown more generally that
+  \[
+    \Phi( m_\lambda )
+    =
+    \class{ \Nil_\lambda }
+  \]
+  for every partition~$\lambda \in \Par$, see \cref{understanding the iso on a basis}.
+  Under the isomorphism~$\Phi$ the standard basis~$\class{\Nil_\lambda}$ of~$\Hall(Q, \Finite_1)$ does therefore correspond to the monomial symmetric functions~$m_\lambda$.
+\end{remark}
 
 
 
@@ -1680,9 +1690,9 @@ from which it follows that~$\Ext^1(S,S) \cong \Finite_q$.
       \class{M} \cdot \class{N}
       =
       \sum_{\class{R} \in \Iso(Q, \Finite_q)}
-      C^R_{M,N} \class{R}
+      F^R_{M,N} \class{R}
     \shortintertext{where}
-      C^R_{M,N}
+      F^R_{M,N}
       =
       \counting
       \{
@@ -1831,7 +1841,7 @@ from which it follows that~$\Ext^1(S,S) \cong \Finite_q$.
 
 We have
 \[
-  C^{(1^{n+1})}_{(1^n),(1)}
+  F^{(1^{n+1})}_{(1^n),(1)}
   =
   \counting {\Gr(1, n+1, \Finite_q)}
   = 
@@ -1845,7 +1855,7 @@ We have
 \]
 and also
 \begin{align*}
-  C^{(1^{n+2})}_{(1^n),(1,1)}
+  F^{(1^{n+2})}_{(1^n),(1,1)}
   &=
   \qbinom{n+2}{2}_q
   =
@@ -2093,7 +2103,7 @@ See \cref{basis for n 1}.
   \label{basis for n 1}
 \end{figure}
 
-The coefficient~$C^{(n, 1^m)}_{(1^m), (n)}$ is the number of subrepresentations~$L$ of~$\Nil_{(n, 1^m)}$ with~$L \cong \Nil_n$ and~$\Nil_{(n,1)} / L \cong \Nil_{(1^m)}$.
+The coefficient~$F^{(n, 1^m)}_{(1^m), (n)}$ is the number of subrepresentations~$L$ of~$\Nil_{(n, 1^m)}$ with~$L \cong \Nil_n$ and~$\Nil_{(n,1)} / L \cong \Nil_{(1^m)}$.
 The condition~$L \cong \Nil_n$ means that~$L$ is cyclically generated by a vector
 \[
   v
@@ -2129,14 +2139,14 @@ It is thus isomorphic to~$\Nil_{(1^m)}$.
 We get for every choice of coefficient~$b_1, \dotsc, b_m \in \Finite_q$ a different subrepresentation of~$\Nil_{(n, 1^m)}$.
 Hence
 \[
-  C^{(n, 1^m)}_{(1^m), (n)}
+  F^{(n, 1^m)}_{(1^m), (n)}
   =
   \counting \Finite_q^m
   =
   q^m \,.
 \]
 
-The coefficient~$C^{(n, 1^m)}_{(n), (1^m)}$ is the number of subrepresentations~$L$ of~$\Nil_{(n, 1^m)}$ with~$L \cong \Nil_{(1^m)}$ and~$\Nil_{(n, 1^m)}/L \cong \Nil_n$.
+The coefficient~$F^{(n, 1^m)}_{(n), (1^m)}$ is the number of subrepresentations~$L$ of~$\Nil_{(n, 1^m)}$ with~$L \cong \Nil_{(1^m)}$ and~$\Nil_{(n, 1^m)}/L \cong \Nil_n$.
 The condition~$L \cong \Nil_{1^m}$ means precisely that~$L$ is an~\dimensional{$m$} linear subspace of~$\gen{ e_n, f_1, \dotsc, f_m }_{\Finite_q}$.
 We note that if~$g$ is a vector of~$\gen{ e_n, f_1, \dotsc, f_m }_{\Finite_q}$ that is not contained in~$L$ then the residue classes
 \[
@@ -2166,7 +2176,7 @@ Then we can choose~$g$ as~$e_1$ and find that the residue classes
 form a basis of~$\Nil_{(n, 1^m)} / L$.
 This basis forms a single Jordan chain, whence~$\Nil_{(n, 1^m)} / L$ is isomorphic to~$\Nil_n$.
 
-We thus find that the structure constant~$C^{(n, 1^m)}_{(n), (1^m)}$ is the number of~\dimensional{$m$} subspaces of~$\gen{e_n, f_1, \dotsc, f_m}$ that does not contain~$e_n$.
+We thus find that the structure constant~$F^{(n, 1^m)}_{(n), (1^m)}$ is the number of~\dimensional{$m$} subspaces of~$\gen{e_n, f_1, \dotsc, f_m}$ that does not contain~$e_n$.
 The number of~\dimensional{$m$} subspaces of~$\gen{e_n, f_1, \dotsc, f_m}$ is according to \cref{size of quantum grassmannian} given by the quantum binomial
 \[
   \qbinom{m+1}{m}_q \,.
@@ -2179,7 +2189,7 @@ We see again from \cref{size of quantum grassmannian} that there are
 such subspaces.
 We hence find that
 \[
-  C^{(n, 1^m)}_{(n), (1^m)}
+  F^{(n, 1^m)}_{(n), (1^m)}
   =
   \qbinom{m+1}{m}_q - \qbinom{m}{m-1}_q
   =
@@ -2219,7 +2229,7 @@ We hence find that
 %
 %We find altogether that there are~$q$ choices for~$L$, i.e
 %\[
-%  C^{(n,1)}_{(n),(1)}
+%  F^{(n,1)}_{(n),(1)}
 %  =
 %  q \,.
 %\]
@@ -2241,11 +2251,11 @@ It is defined as follows:
       \class{M} \cdot \class{N}
       \defined
       \sum_{\class{R} \in \Iso(Q, \Finite_1)}
-      C^R_{M,N} \class{R}
+      F^R_{M,N} \class{R}
     \]
-    where the structure coefficients~$C^R_{M,N}$ are given by
+    where the structure coefficients~$F^R_{M,N}$ are given by
     \[
-      C^R_{M,N}
+      F^R_{M,N}
       =
       \counting
       \{
@@ -2321,9 +2331,83 @@ and the coefficient of~$b_\lambda$ for~$\lambda = (i_1, \dotsc, i_k + j, \dotsc,
   where the entry of interest is overlined.
 \end{example}
 
+We can rewrite the above identity in a more systematic way:
+For every tupel~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ consisting of nonnegative integers~$\lambda_i \geq 0$ and every~$j \geq 0$ let
+\[
+  a(\lambda, j)
+  \defined
+  ( \text{how often~$i$ occurs in~$\lambda$} )
+  =
+  \counting
+  \{
+    1 \leq i \leq l
+  \suchthat
+    \lambda_i = j
+  \} \,.
+\]
+We denote for every~$i = 1, \dotsc, l$ by~$\varepsilon_i$ the tupel that has~$1$ as its~\howmanyth{$i$} entry and~$0$ otherwise.
+Then
+\begin{align}
+  \label{product formula for representations}
+  \class{\Nil_\lambda} \cdot \class{\Nil_j}
+  &=
+  a((\lambda, j), j) \class{ \Nil_{(\lambda, j)} }
+  +
+  \sum_{i=1}^l
+  \frac{ a(\lambda + j \varepsilon_i, \lambda_i + j) }{ a(\lambda, \lambda_i) }
+  \class{ \Nil_{\lambda + j \varepsilon_i} }
+  \\
+  &=
+  (a(\lambda,j) + 1) \class{ \Nil_{(\lambda, j)} }
+  +
+  \sum_{i=1}^l
+  \frac{ a(\lambda, \lambda_i + j) + 1 }{ a(\lambda, \lambda_i) }
+  \class{ \Nil_{\lambda + j \varepsilon_i} }
+  \notag
+\end{align}
+The coefficients~$a(\lambda + j \varepsilon_i, \lambda_i + j)$ are the same as the~$b_{\lambda + j \varepsilon_i}$ above.
+The normalization~$a(\lambda, \lambda_i)$ ensures that those summands which occur multiple times are effectively only counted once.
+
 \begin{remark}
   \label{indecomposables generate hall algebra}
-  It follows from the above formula by induction that~$\Hall(Q, \Finite_1)$ is generated as an algebra by the~$N_i$ with~$i \geq 1$.
+  Let~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ be a partition and let~$\lambda' = (\lambda_1, \dotsc, \lambda_{l-1})$.
+  Then
+  \[
+    \lambda = (\lambda', \lambda_l) \,.
+  \]
+  The above formulas do therefore yield the identity
+  \begin{align}
+    \Nil_\lambda
+    =
+    \Nil_{(\lambda', \lambda_l)}
+    &=
+    \frac{1}{a((\lambda', \lambda_l), \lambda_l)}
+    \left(
+      \class{ \Nil_{\lambda'} }
+      \cdot
+      \class{ \Nil_{\lambda_l} }
+      -
+      \sum_{i=1}^{l-1}
+      \frac{ a(\lambda', \lambda'_i + \lambda_l) + 1 }{ a(\lambda', \lambda'_i) }
+      \class{ \Nil_{\lambda' + \lambda_l \varepsilon_i} }
+    \right)
+    \notag
+    \\
+    &=
+    \frac{1}{a(\lambda, \lambda_l)}
+    \left(
+      \class{ \Nil_{\lambda'} }
+      \cdot
+      \class{ \Nil_{\lambda_l} }
+      -
+      \sum_{i=1}^{l-1}
+      \frac{ a(\lambda', \lambda'_i + \lambda_l) + 1 }{ a(\lambda', \lambda'_i) }
+      \class{ \Nil_{\lambda' + \lambda_l \varepsilon_i} }
+    \right)
+    \label{identity for representations}
+  \end{align}
+  The partitions~$\lambda'$ and~$\lambda' + j \varepsilon_i$ that appear on the right hand side are of strictly smaller length than~$\lambda$.
+  It hence follows from this formula by induction that~$\Hall(Q, \Finite_1)$ is generated as an algebra by the classes~$\class{\Nil_i}$ with~$i \geq 1$.
 \end{remark}
 
 
@@ -2423,6 +2507,42 @@ for every number of variables~$n \geq 0$.
 
 
 
+\subsection{Monomial Symmetric Functions}
+\label{monomial symmetric functions}
+
+For every number of variables~$n \geq 0$ and partition~$\lambda \in \Par$ with~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ of length~$l \leq n$ the corresponding \defemph{monomial symmetric polynomial} is given by
+\[
+  m^{(n)}_\lambda(x_1, \dotsc, x_n)
+  \defined
+  \sum \text{distinct permutations of~$x_1^{\lambda_1} \dotsm x_l^{\lambda_l}$} \,.
+\]
+if~$n \geq l$, and by
+\[
+  m^{(n)}_\lambda
+  \defined
+  0
+\]
+if~$n < l$.
+We have
+\[
+  m^{(n+1)}_\lambda(x_1, \dotsc, x_n, 0)
+  =
+  m^{(n)}_\lambda
+\]
+for every number of variables~$n \geq 0$, and each~$m_\lambda^{(n)}$ is homogeneous of degree~$\size{\lambda}$.
+We therefore get a well-defined homogeneous symmetric function
+\[
+  m_\lambda
+  \in
+  \Lambda_{\size{\lambda}} \,,
+\]
+which we call the \defemph{monomial symmetric function} associated to~$\lambda$.
+
+The symmetric polynomials~$m^{(n)}_\lambda$ where~$\lambda$ is of length~$\length(\lambda) \leq n$ form a vector space basis of~$\Lambda^{(n)}$, for every number of variables~$n \geq 0$.
+It hence follows from \cref{iso in each degree for sufficiently large} (similarly to \cref{bases for symmetric functions}) that the monomial symmetric functions~$m_\lambda$ with~$\lambda \in \Par$ form a vector space basis for~$\Lambda$.
+
+
+
 \subsection{Regarding~$\Lambda$ as a Colimit}
 \label{symmetric functions as colimit}
 
@@ -2486,6 +2606,372 @@ for every number of variables~$n \geq 0$.
 \end{proof}
 
 
+
+\subsection{Understanding the Isomorphism~$\Hall(Q, \Finite_1) \cong \Lambda$ on the basis~$\class{ \Nil_\lambda }$}
+\label{understanding the iso on a basis}
+
+\subsubsection{Fixing Notation}
+
+Fer every tupel~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ of nonnegative integers~$\lambda_i \geq 0$ and every~$j \geq 0$ let
+\[
+  a(\lambda, k)
+  \defined
+  ( \text{how often~$k$ occurs in~$\lambda$} )
+  =
+  \counting
+  \{
+    1 \leq i \leq l
+  \suchthat
+    \lambda_i = k
+  \} \,,
+\]
+and let
+\[
+  A(\lambda)
+  \defined
+  \prod_{k=0}^\infty a(\lambda, k)! \,.
+\]
+This product is well-defined because~$a(\lambda, j) = 0$ for all but finitely many~$j \geq 0$.
+The number~$A(\lambda)$ is the cardinality of the stabilizer of the tupel~$\lambda$ under the permutation action of the symmetric group~$\symm_l$.
+
+
+We denote for every~$i$ by~$\varepsilon_i$ the tupel whose~\howmanyth{$i$} entry is~$1$ and whose other entries are~$0$.
+We note that for every~$j \geq 1$ we have
+\[
+  a(\lambda + j \varepsilon_i, k)
+  =
+  \begin{cases*}
+    a(\lambda, k)
+    &
+    if~$k \neq \lambda_i, \lambda_i + j$,
+    \\
+    a(\lambda, k) - 1
+    &
+    if~$k = \lambda_i$,
+    \\
+    a(\lambda, k) + 1
+    &
+    if~$k = \lambda_i + j$.
+  \end{cases*}
+\]
+It follows that
+\[
+  A(\lambda + j \varepsilon_i)
+  =
+  \prod_{k=0}^\infty
+  a(\lambda + j \varepsilon_i, k)!
+  =
+  \prod_{k=0}^\infty
+  a(\lambda, k)!
+  \cdot
+  \frac
+  {
+    a(\lambda, \lambda_i + j) + 1
+  }{
+    a(\lambda, \lambda_i)
+  }
+  =
+  A(\lambda)
+  \cdot
+  \frac
+  {
+    a(\lambda + j \varepsilon_i, \lambda_i + j)
+  }{
+    a(\lambda, \lambda_i)
+  } \,.
+\]
+
+For every polynomial~$f^{(n)} \in \Complex[x_1, \dotsc, x_n]^{\symm_n}$ we denote its \defemph{symmetrization} by
+\[
+  R^{(n)}( f^{(n)} )
+  \defined
+  \sum_{w \in \symm_n}
+  w . f^{(n)} \,.
+\]
+We note that if~$g^{(n)} \in \Lambda^{(n)}$ is a symmetric polynomial then
+\begin{align*}
+  R^{(n)}( f^{(n)} g^{(n)} )
+  &=
+  \sum_{w \in \symm_n}
+  w . ( f^{(n)} g^{(n)} )
+  \\
+  &=
+  \sum_{w \in \symm_n}
+  (w . f^{(n)}) (w . g^{(n)})
+  \\
+  &=
+  \sum_{w \in \symm_n}
+  (w . f^{(n)}) g^{(n)}
+  \\
+  &=
+  R^{(n)}( f^{(n)} ) g^{(n)} \,.
+\end{align*}
+
+
+\subsubsection{A Calculation}
+
+Suppose now that~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ is any of positive integers~$\lambda_i \geq 1$ and that~$j \geq 0$ is any nonnegative integer.
+We compute the product
+\[
+  m^{(n)}_\lambda
+  \cdot
+  p^{(n)}_j
+\]
+for any number of variables~$n$ with~$n > l$.
+For this we fill the tupel~$\lambda$ on the right with zeroes to reach a tupel~$\mu$ of length~$n$, i.e.
+\[
+  \mu
+  =
+  (\mu_1, \dotsc, \mu_n, \mu_{n+1}, \dotsc, \mu_n)
+  =
+  (\lambda_1 \dotsc, \lambda_l, 0, \dotsc, 0) \,.
+\]
+We have
+\[
+  m^{(n)}_\lambda(x_1, \dotsc, x_n)
+  =
+  m^{(n)}_\mu(x_1, \dotsc, x_n)
+  =
+  \frac{1}{A(\mu)}
+  R^{(n)}( x_1^{\mu_1} \dotsm x_n^{\mu_n} ) \,.
+\]
+We can hence compute the above product as
+\begin{align*}
+  m^{(n)}_\lambda(x_1, \dotsc, x_n) \cdot p^{(n)}_j(x_1, \dotsc, x_n)
+  &=
+  \frac{1}{A(\mu)}
+  R^{(n)}\Bigl( x_1^{\mu_1} \dotsm x_n^{\mu_n} \Bigr)
+  \cdot
+  p^{(n)}_j(x_1, \dotsc, x_n)
+  \\
+  &=
+  \frac{1}{A(\mu)}
+  R^{(n)}
+  \Bigl(
+    x_1^{\mu_1} \dotsm x_n^{\mu_n}
+    \cdot
+    p^{(n)}_j(x_1, \dotsc, x_n)
+  \Bigr)
+  \\
+  &=
+  \frac{1}{A(\mu)}
+  R^{(n)}
+  \Bigl(
+    x_1^{\mu_1} \dotsm x_n^{\mu_n}
+    \cdot
+    \sum_{i=1}^n x_i^j
+  \Bigr)
+  \\
+  &=
+  \sum_{i=1}^n
+  \frac{1}{A(\mu)}
+  R^{(n)}
+  \Bigl(
+    x_1^{\mu_1} \dotsm x_i^{\mu_i + j} \dotsm x_n^{\mu_n}
+  \Bigr)
+  \\
+  &=
+  \sum_{i=1}^n
+  \frac{ A(\mu + j \varepsilon_i) }{ A(\mu) }
+  m^{(n)}_{\mu + j \varepsilon_i}(x_1, \dotsc, x_n)
+  \\
+  &=
+  \sum_{i=1}^n
+  \frac{ a(\mu + j \varepsilon_i, \mu_i + j) }{ a(\mu, \mu_i) } 
+  m^{(n)}_{\mu + j \varepsilon_i}(x_1, \dotsc, x_n)
+\end{align*}
+
+For the summands~$i = 1, \dotsc, l$ we can replace the role of~$\mu$ by that of~$\lambda$.
+For the summands~$i = l+1, \dotsc, n$ we have~$\mu_i = 0$ and the first~$l$ entries of~$\mu + j \lambda \varepsilon_i$ equal that of~$\lambda$.
+We therefore have for every~$i = l+1, \dotsc, n$ that
+\[
+  a(\mu + j \varepsilon_i, \mu_i + j)
+  =
+  a(\mu + j \varepsilon_i, j)
+  =
+  a(\lambda, j) + 1
+  =
+  a((\lambda, j), j)
+\]
+as well as
+\[
+  a(\mu, \mu_i)
+  =
+  a(\mu, 0)
+  =
+  n - l \,.
+\]
+We also have for every~$i = l+1, \dotsc, n$ that
+\begin{align*}
+  m^{(n)}_{\mu + j \varepsilon_i}(x_1, \dotsc, x_n)
+  &=
+  \frac{1}{A(\mu + j \varepsilon_i)}
+  R^{(n)}(x_1^{\mu_1} \dotsm x_l^{\mu_l} x_i^j)
+  \\
+  &=
+  \frac{1}{A(\mu + j\varepsilon_{l+1})}
+  R^{(n)}(x_1^{\mu_1} \dotsm x_l^{\mu_l} x_{l+1}^j)
+  \\
+  &=
+  m^{(n)}_{\mu + j \varepsilon_{l+1}}
+  \\
+  &=
+  m^{(n)}_{(\lambda, j)}
+\end{align*}
+We hence find that the summands for~$i = l+1, \dotsc, n$ give
+\[
+  \sum_{i=l+1}^n \frac{ a((\lambda, j), j) }{ n-l } m^{(n)}_{(\lambda, j)}
+  =
+  m^{(n)}_{(\lambda, j)} \,.
+\]
+
+We find altogether that
+\[
+  m^{(n)}_\lambda \cdot p^{(n)}_j
+  =
+  a((\lambda, j), j)
+  m^{(n)}_{(\lambda, j)}
+  +
+  \sum_{i=1}^l
+  \frac{ a(\lambda + j \varepsilon_i, \lambda_i + j) }{ a(\lambda, \lambda_i) } 
+  m^{(n)}_{\lambda + j \varepsilon_i} \,.
+\]
+This is a relation for symmetric polynonomials that holds for all~$n > l$.
+It thus gives the equality of symmetric functions
+\[
+  m_\lambda \cdot p_j
+  =
+  a((\lambda, j), j)
+  m_{(\lambda, j)}
+  +
+  \sum_{i=1}^l
+  \frac{ a(\lambda + j \varepsilon_i, \lambda_i + j) }{ a(\lambda, \lambda_i) } 
+  m_{\lambda + j \varepsilon_i} \,.
+\]
+This can also be expressed as
+\begin{align}
+  m_{(\lambda, j)}
+  &=
+  \frac{1}{a((\lambda, j), j)}
+  \left(
+    m_\lambda \cdot p_j
+    -
+    \sum_{i=1}^l
+    \frac{ a(\lambda + j \varepsilon_i, \lambda_i + j) }{ a(\lambda, \lambda_i) } 
+    m_{\lambda + j \varepsilon_i}
+  \right)
+  \\
+  &=
+  \frac{1}{a((\lambda, j), j)}
+  \left(
+    m_\lambda \cdot p_j
+    -
+    \sum_{i=1}^l
+    \frac{ a(\lambda, \lambda_i + j) + 1 }{ a(\lambda, \lambda_i) } 
+    m_{\lambda + j \varepsilon_i}
+  \right) \,.
+\end{align}
+
+Suppose that~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ is a partition of positive length~$l \geq 1$.
+Then it follows for the partition~$\lambda' \defined (\lambda_1, \dotsc, \lambda_{l-1})$ that
+\[
+  \lambda = (\lambda', \lambda_l)
+\]
+and therefore
+\begin{align}
+  m_\lambda
+  =
+  m_{(\lambda', \lambda_l)}
+  &=
+  \frac{1}{a((\lambda', \lambda_l), \lambda_l)}
+  \left(
+    m_{\lambda'} \cdot p_{\lambda_l}
+    -
+    \sum_{i=1}^{l-1}
+    \frac{ a(\lambda', \lambda'_i + \lambda_l) + 1 }{ a(\lambda', \lambda'_i) } 
+    m_{\lambda' + \lambda_l \varepsilon_i}
+  \right)
+  \notag
+  \\
+  &=
+  \frac{1}{a(\lambda, \lambda_l)}
+  \left(
+    m_{\lambda'} \cdot p_{\lambda_l}
+    -
+    \sum_{i=1}^{l-1}
+    \frac{ a(\lambda', \lambda'_i + \lambda_l) + 1 }{ a(\lambda', \lambda'_i) } 
+    m_{\lambda' + \lambda_l \varepsilon_i}
+  \right) \,.
+  \label{identity for polynomials}
+\end{align}
+
+\subsubsection{Consequences}
+
+\begin{proposition}
+  Under the isomorphism~$\Hall(Q, \Finite_1)$ from \cref{the isomorphism} the class~$\class{ \Nil_\lambda }$ corresponds to the monomial symmetric function~$m_\lambda$, for every partition~$\lambda \in \Par$.
+\end{proposition}
+
+\begin{proof}
+  We denote the isomorphism as in \cref{the isomorphism} by~$\Phi \colon \Lambda \to \Hall(Q, \Finite_1)$.
+  We show the assertion by induction over the length of~$\lambda$.
+  If~$\length(\lambda) = 0$ then~$\class{\Nil_\lambda} = \class{0} = 1$ and also~$\class{m_\lambda} = 1$.
+  If~$\length(\lambda) = 1$ then~$\lambda = (k)$ for some positive integer~$k \geq 1$ and thus
+  \[
+    \Phi( \class{ \Nil_\lambda } )
+    =
+    \Phi( \class{ \Nil_k } )
+    =
+    p_k
+    =
+    m_{(k)}
+    =
+    m_\lambda \,.
+  \]
+  The second to last equality (which is an equality of symmetric functions) holds because
+  \[
+    m_{(k)}(x_1, \dotsc, x_1)
+    =
+    \sum \{ \text{distinct permutations of~$x_1^k$} \}
+    =
+    x_1^k + \dotsb + x_n^k
+    =
+    p_k(x_1, \dotsc, x_n)
+  \]
+  for every number of variables~$n \geq 0$.
+
+  For the induction step we consider the two identities~\eqref{identity for representations} and~\eqref{identity for polynomials}.
+  If~$\lambda = (\lambda_1, \dotsc, \lambda_l)$ then for~$\lambda' \defined (\lambda_1, \dotsc, \lambda_{l-1})$ these identities tell us that
+  \[ 
+    \class{ \Nil_\lambda }
+    =
+    \frac{1}{a(\lambda, \lambda_l)}
+    \left(
+      \class{ \Nil_{\lambda'} }
+      \cdot
+      \class{ \Nil_{\lambda_l} }
+      -
+      \sum_{i=1}^{l-1}
+      \frac{ a(\lambda', \lambda'_i + \lambda_l) + 1 }{ a(\lambda', \lambda'_i) }
+      \class{ \Nil_{\lambda' + \lambda_l \varepsilon_i} }
+    \right)
+  \]
+  and similarly
+  \[
+    m_\lambda
+    =
+    \frac{1}{a(\lambda, \lambda_l)}
+    \left(
+      m_{\lambda'} \cdot p_{\lambda_l}
+      -
+      \sum_{i=1}^{l-1}
+      \frac{ a(\lambda', \lambda'_i + \lambda_l) + 1 }{ a(\lambda', \lambda'_i) } 
+      m_{\lambda' + \lambda_l \varepsilon_i}
+    \right) \,.
+  \]
+  We note that the partitions that appear on the right hand sides of these equations are all of strictly smaller length than~$\lambda$.
+  It follows from the induction hypothesis that the right hands sides correspond to each other under~$\Phi$.
+  The same does therefore hold for the left hand sides.
+\end{proof}
 
 
 
