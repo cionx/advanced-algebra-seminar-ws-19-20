@@ -32,6 +32,9 @@
 \usepackage[silent]{fontspec}
 \usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math} % has to be loaded after mathtools and amssymb
 
+% header
+\usepackage[automark, autooneside=false]{scrlayer-scrpage}
+
 % referencing
 \usepackage[noabbrev, capitalize]{cleveref}
 
@@ -40,6 +43,20 @@
 
 %%%%% CONFIGURATION
 
+
+%%% header and footer
+\automark[section]{section}
+\automark*[subsection]{}
+
+\lehead{\pagemark}
+\rohead{\pagemark}
+
+\cehead{\rightmark}
+\cohead{\rightmark}
+
+\ofoot{}
+\cfoot{}
+\ifoot{}
 
 
 %%% bibliography
